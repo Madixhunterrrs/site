@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Demandes reçues — ScaleUp{% endblock %}
+{% block content %}
+
+<section class="page-hero" style="padding-bottom:40px">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Espace privé</span>
+      <h1>Demandes reçues</h1>
+      <p>{{ entries|length }} demande(s) enregistrée(s), les plus récentes en premier.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    {% if not entries %}
+    <div class="glass" style="padding:40px; text-align:center;">
+      <p style="margin:0">Aucune demande pour le moment.</p>
+    </div>
+    {% else %}
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      {% for e in entries %}
+      <div class="glass" style="padding:22px 26px;">
+        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+          <strong>{{ e.name }} — {{ e.org }}</strong>
+          <span style="font-family:var(--font-mono); font-size:.75rem; color:var(--muted-2);">{{ e.received_at }}</span>
+        </div>
+        <p style="margin:0 0 6px;"><a href="mailto:{{ e.email }}" style="color:var(--accent)">{{ e.email }}</a> — {{ e.service }}</p>
+        {% if e.message %}<p style="margin:0; color:var(--muted)">{{ e.message }}</p>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% endblock %}

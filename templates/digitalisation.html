@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% block title %}Digitalisation — ScaleUp{% endblock %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <div class="section-head center reveal is-visible">
+      <span class="eyebrow">Digitalisation</span>
+      <h1>Vos process métiers, <span class="grad-text">automatisés</span> et connectés.</h1>
+      <p>Applications sur mesure, automatisation, CRM, ERP et cloud : nous digitalisons ce qui, aujourd'hui, ralentit encore votre entreprise.</p>
+      <div class="hero-actions" style="justify-content:center; margin-top:32px">
+        <a href="/#demo" class="btn btn-primary btn-magnetic">Discuter de mon projet</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Ce que nous digitalisons</span>
+      <h2>De l'idée au système en production</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card glass glow-border reveal reveal-delay-1">
+        <div class="service-icon">💻</div>
+        <h3>Développement sur mesure</h3>
+        <p>Des applications web pensées pour vos process réels.</p>
+        <ul>
+          <li>Applications web métier</li>
+          <li>Portails clients &amp; partenaires</li>
+          <li>Intégrations API</li>
+        </ul>
+      </div>
+      <div class="service-card glass glow-border reveal reveal-delay-2">
+        <div class="service-icon">🤖</div>
+        <h3>Automatisation</h3>
+        <p>Des tâches répétitives qui s'exécutent sans intervention.</p>
+        <ul>
+          <li>Workflows automatisés</li>
+          <li>Notifications &amp; relances</li>
+          <li>Génération de documents</li>
+        </ul>
+      </div>
+      <div class="service-card glass glow-border reveal reveal-delay-3">
+        <div class="service-icon">☁️</div>
+        <h3>CRM, ERP &amp; Cloud</h3>
+        <p>Un système d'information unifié et accessible partout.</p>
+        <ul>
+          <li>Mise en place de CRM</li>
+          <li>Intégration ERP</li>
+          <li>Gestion documentaire cloud</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="app-showcase">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">Gestion documentaire</span>
+        <h2>Fini les fichiers dispersés</h2>
+        <p>Tous vos documents sont centralisés, classés et accessibles selon les droits de chacun. Recherche instantanée, historique des versions et sauvegarde automatique.</p>
+        <ul class="check-list">
+          <li><span class="ico">✓</span> Centralisation cloud sécurisée</li>
+          <li><span class="ico">✓</span> Recherche instantanée</li>
+          <li><span class="ico">✓</span> Gestion fine des accès</li>
+        </ul>
+      </div>
+      <div class="dash-wrap reveal reveal-delay-2">
+        <div class="dash-card tilt" style="animation:none; transform:none">
+          <div class="dash-topbar">
+            <div class="dash-dots"><span></span><span></span><span></span></div>
+            <div class="dash-title">SYSTÈME — VUE D'ENSEMBLE</div>
+          </div>
+          <div class="dash-stats">
+            <div class="dash-stat"><span>Process automatisés</span><b class="up">24</b></div>
+            <div class="dash-stat"><span>Heures gagnées / mois</span><b>310h</b></div>
+            <div class="dash-stat"><span>Uptime</span><b>99.9%</b></div>
+          </div>
+          <div class="dash-panel">
+            <h5>Charge système — 7 jours</h5>
+            <div class="mini-bars">
+              <i style="height:50%"></i><i style="height:62%"></i><i style="height:58%"></i>
+              <i style="height:70%"></i><i style="height:64%"></i><i style="height:80%"></i><i style="height:72%"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Formation incluse</span>
+      <h2>Vos équipes montent en compétence avec vous</h2>
+      <p>Chaque déploiement inclut une formation pratique, pour que vos équipes soient autonomes dès le premier jour.</p>
+    </div>
+    <div class="tag-cloud" style="justify-content:center">
+      <span>Ateliers pratiques</span>
+      <span>Documentation dédiée</span>
+      <span>Support post-lancement</span>
+      <span>Suivi d'adoption</span>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Notre méthode</span>
+      <h2>Comment nous travaillons</h2>
+    </div>
+    <div class="timeline">
+      {% set steps = [
+        ("01","Audit","Cartographie de vos outils et process actuels."),
+        ("02","Proposition","Une architecture technique claire et chiffrée."),
+        ("03","Développement","Construction de la solution par itérations courtes."),
+        ("04","Déploiement","Mise en production progressive et sécurisée."),
+        ("05","Accompagnement","Formation des équipes et amélioration continue."),
+      ] %}
+      {% for num, title, desc in steps %}
+      <div class="tl-item reveal">
+        <div class="tl-num">{{ num }}</div>
+        <div class="tl-content">
+          <h4>{{ title }}</h4>
+          <p>{{ desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>Avant de vous lancer</h2>
+    </div>
+    <div class="faq-list">
+      {% set faqs = [
+        ("Faut-il tout changer d'un coup ?","Non. Nous digitalisons par étapes, en commençant par le process qui vous fait perdre le plus de temps aujourd'hui, sans perturber votre activité."),
+        ("Nos équipes savent-elles utiliser ces outils ?","Une formation pratique est incluse à chaque déploiement, avec une documentation adaptée à vos équipes, techniques ou non."),
+        ("Que devient notre ancien système ou nos anciens fichiers ?","Nous nous chargeons de la migration de vos données existantes (Excel, ancien logiciel) vers la nouvelle solution, sans perte d'information."),
+        ("Peut-on connecter cette solution à nos outils actuels ?","Oui, nos développements s'intègrent avec vos outils existants (comptabilité, CRM, messagerie) via des connexions API."),
+        ("Combien de temps prend un projet de digitalisation ?","Cela dépend du périmètre, mais un premier module opérationnel est généralement livré en quelques semaines, puis enrichi par itérations."),
+      ] %}
+      {% for q, a in faqs %}
+      <div class="faq-item glass reveal">
+        <div class="faq-q"><span>{{ q }}</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>{{ a }}</p></div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-neon reveal">
+      <span class="eyebrow" style="justify-content:center">Parlons de votre projet</span>
+      <h2>Votre entreprise mérite des outils à la hauteur de son ambition</h2>
+      <p>Échangeons sur vos process actuels et sur ce qui peut être digitalisé dès aujourd'hui.</p>
+      <a href="/#demo" class="btn btn-primary btn-magnetic">Réserver un échange</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

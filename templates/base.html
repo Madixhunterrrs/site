@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}ScaleUp — Transformez votre entreprise grâce au digital{% endblock %}</title>
+<meta name="description" content="ScaleUp conçoit des applications de gestion scolaire, digitalise les entreprises et pilote leur marketing digital. Une seule agence, tout votre digital.">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo-icon.png') }}">
+<link rel="apple-touch-icon" href="{{ url_for('static', filename='img/logo-icon.png') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="noise-layer" aria-hidden="true"></div>
+<canvas id="particles" aria-hidden="true"></canvas>
+
+<header class="site-header" id="site-header">
+  <div class="header-inner container">
+    <a href="/" class="logo" aria-label="ScaleUp — accueil">
+      <span class="logo-mark">
+        <img src="{{ url_for('static', filename='img/logo-icon.png') }}" alt="" width="34" height="34">
+      </span>
+      <span class="logo-text">ScaleUp</span>
+    </a>
+    <span class="logo-tagline">Strategy &amp; Growth Agency</span>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <ul>
+        {% for item in nav_items %}
+        <li><a href="{{ item.href }}" class="{{ 'is-active' if active == item.href else '' }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#demo" class="btn btn-primary btn-sm">Demander une démo</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      {% for item in nav_items %}
+      <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+      {% endfor %}
+      <li><a href="#demo" class="btn btn-primary btn-sm">Demander une démo</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="logo footer-logo-full">
+        <img src="{{ url_for('static', filename='img/logo-full.png') }}" alt="ScaleUp — Strategy &amp; Growth Agency" width="240">
+      </a>
+      <p>L'agence qui digitalise les écoles et les entreprises, du code jusqu'à la conversion.</p>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Instagram">ig</a>
+        <a href="#" aria-label="Facebook">fb</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/application">Gestion d'école</a></li>
+        <li><a href="/digitalisation">Développement web</a></li>
+        <li><a href="/digitalisation">Digitalisation</a></li>
+        <li><a href="/marketing">Marketing digital</a></li>
+        <li><a href="/marketing">Facebook &amp; Google Ads</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Agence</h4>
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/application">Application</a></li>
+        <li><a href="#process">Notre process</a></li>
+        <li><a href="#demo">Demander une démo</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:scaleupadministration@gmail.com">scaleupadministration@gmail.com</a></li>
+        <li><a href="tel:+212640379092">+212 6 40 37 90 92</a></li>
+        <li>Fès, Maroc</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="year"></span> ScaleUp. Tous droits réservés.</span>
+    <span>Conçu avec une obsession du détail.</span>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</body>
+</html>

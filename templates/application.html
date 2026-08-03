@@ -1,0 +1,330 @@
+{% extends "base.html" %}
+{% block title %}Application de Gestion d'École — ScaleUp{% endblock %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <div class="section-head center reveal is-visible">
+      <span class="eyebrow">Notre produit phare</span>
+      <h1>L'application qui pilote <span class="grad-text">toute la vie scolaire.</span></h1>
+      <p>Élèves, enseignants, parents, paiements, transport, examens : une seule plateforme, pensée pour les écoles qui veulent gagner du temps sans perdre le contrôle.</p>
+      <div class="hero-actions" style="justify-content:center; margin-top:32px">
+        <a href="/#demo" class="btn btn-primary btn-magnetic">Essayer gratuitement</a>
+        <a href="#tarifs" class="btn btn-outline">Voir les tarifs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:0">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Interface réelle</span>
+      <h2>Ce que voit votre équipe au quotidien</h2>
+      <p>Aucune maquette : voici un véritable écran de l'application, avec son moteur d'analyse pédagogique intégré.</p>
+    </div>
+    <div class="screenshot-frame tilt reveal reveal-delay-2" style="max-width:1040px; margin:0 auto">
+      <div class="frame-bar"><span></span><span></span><span></span></div>
+      <img src="{{ url_for('static', filename='img/app-screenshot.png') }}" alt="Tableau de bord d'analyse pédagogique de l'application ScaleUp" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">Suivi des élèves</span>
+        <h2>Chaque élève, un dossier complet et à jour</h2>
+        <p>Inscriptions, historique, présence et résultats sont centralisés. Les équipes pédagogiques retrouvent toute l'information en quelques secondes, sans classeur ni fichier Excel.</p>
+        <ul class="check-list">
+          <li><span class="ico">✓</span> Dossiers élèves numérisés et recherchables</li>
+          <li><span class="ico">✓</span> Historique scolaire complet</li>
+          <li><span class="ico">✓</span> Accès filtré par classe, niveau ou statut</li>
+        </ul>
+      </div>
+      <div class="dash-wrap reveal reveal-delay-2">
+        <div class="dash-card tilt" style="animation:none; transform:none">
+          <div class="dash-topbar">
+            <div class="dash-dots"><span></span><span></span><span></span></div>
+            <div class="dash-title">MODULE — ÉLÈVES</div>
+          </div>
+          <div class="dash-list">
+            <div class="dash-row"><div class="who"><span class="avatar"></span> Salma Bennani — CE2 A</div><span class="pill ok">Actif</span></div>
+            <div class="dash-row"><div class="who"><span class="avatar"></span> Yassine Tazi — 5e B</div><span class="pill ok">Actif</span></div>
+            <div class="dash-row"><div class="who"><span class="avatar"></span> Nour El Amrani — CM1</div><span class="pill ok">Actif</span></div>
+            <div class="dash-row"><div class="who"><span class="avatar"></span> Adam Kabbaj — 3e A</div><span class="pill wait">À valider</span></div>
+          </div>
+          <div class="dash-stats" style="margin-top:14px">
+            <div class="dash-stat"><span>Total élèves</span><b class="up">1 284</b></div>
+            <div class="dash-stat"><span>Nouvelles fiches</span><b>18</b></div>
+            <div class="dash-stat"><span>À valider</span><b class="warn">4</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="app-showcase section-tight">
+  <div class="container">
+    <div class="two-col">
+      <div class="dash-wrap reveal" style="order:2">
+        <div class="dash-card tilt" style="animation:none; transform:none">
+          <div class="dash-topbar">
+            <div class="dash-dots"><span></span><span></span><span></span></div>
+            <div class="dash-title">MODULE — PAIEMENTS</div>
+          </div>
+          <div class="dash-main" style="grid-template-columns:1fr">
+            <div class="dash-panel">
+              <h5>Encaissements — 6 derniers mois</h5>
+              <div class="mini-bars">
+                <i style="height:40%"></i><i style="height:58%"></i><i style="height:50%"></i>
+                <i style="height:74%"></i><i style="height:66%"></i><i style="height:90%"></i>
+              </div>
+            </div>
+          </div>
+          <div class="dash-stats">
+            <div class="dash-stat"><span>Encaissé</span><b class="up">312 400 DH</b></div>
+            <div class="dash-stat"><span>En attente</span><b class="warn">28 600 DH</b></div>
+            <div class="dash-stat"><span>Factures</span><b>142</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2" style="order:1">
+        <span class="eyebrow">Paiements &amp; facturation</span>
+        <h2>Les encaissements sans relances manuelles</h2>
+        <p>Factures générées automatiquement, rappels envoyés par SMS, historique consultable par les familles. Votre trésorerie devient prévisible.</p>
+        <ul class="check-list">
+          <li><span class="ico">✓</span> Facturation et reçus automatiques</li>
+          <li><span class="ico">✓</span> Relances programmées</li>
+          <li><span class="ico">✓</span> Export comptable en un clic</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">Présence &amp; transport</span>
+        <h2>Une visibilité en temps réel, jusqu'au bus scolaire</h2>
+        <p>Le pointage se fait en quelques secondes, en classe comme dans le transport. Les parents sont notifiés automatiquement en cas d'absence.</p>
+        <ul class="check-list">
+          <li><span class="ico">✓</span> Pointage présence par classe</li>
+          <li><span class="ico">✓</span> Suivi des circuits de transport</li>
+          <li><span class="ico">✓</span> Notification automatique aux parents</li>
+        </ul>
+      </div>
+      <div class="dash-wrap reveal reveal-delay-2">
+        <div class="dash-card tilt" style="animation:none; transform:none">
+          <div class="dash-topbar">
+            <div class="dash-dots"><span></span><span></span><span></span></div>
+            <div class="dash-title">MODULE — PRÉSENCE</div>
+          </div>
+          <div class="dash-main">
+            <div class="dash-panel">
+              <h5>Présence par niveau</h5>
+              <div class="mini-bars">
+                <i style="height:82%"></i><i style="height:74%"></i><i style="height:91%"></i><i style="height:88%"></i>
+              </div>
+            </div>
+            <div class="dash-panel">
+              <div class="donut"><span>96%</span></div>
+              <div class="donut-label">Aujourd'hui</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="app-showcase">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Fonctionnalités</span>
+      <h2>Tous les modules dont votre école a besoin</h2>
+    </div>
+    <div class="modules-grid">
+      {% set modules = [
+        ("👩‍🎓","Élèves","Dossiers, inscriptions et suivi individuel"),
+        ("🧑‍🏫","Enseignants","Emplois du temps et charge de cours"),
+        ("👨‍👩‍👧","Parents","Portail dédié et suivi en direct"),
+        ("🏷️","Classes","Organisation par niveau et section"),
+        ("💳","Paiements","Encaissements et relances automatiques"),
+        ("🧾","Facturation","Factures et reçus générés automatiquement"),
+        ("🚌","Transport","Circuits, présence et géolocalisation"),
+        ("💬","SMS","Notifications instantanées aux parents"),
+        ("📄","Bulletins","Génération automatique des bulletins"),
+        ("✅","Présence","Pointage quotidien élèves et professeurs"),
+        ("📊","Statistiques","Indicateurs clés de l'établissement"),
+        ("🗓️","Emploi du temps","Planification visuelle et flexible"),
+        ("📝","Examens","Notes, moyennes et classements"),
+        ("📈","Tableaux de bord","Vue d'ensemble en un coup d'œil"),
+      ] %}
+      {% for icon, title, desc in modules %}
+      <div class="module-card glass reveal reveal-delay-{{ loop.index0 % 4 + 1 }}">
+        <div class="module-icon">{{ icon }}</div>
+        <h4>{{ title }}</h4>
+        <p>{{ desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Encore plus en images</span>
+      <h2>D'autres modules, en conditions réelles</h2>
+      <p>Transport, suivi de flotte, comptabilité : chaque écran ci-dessous est une vraie capture de l'application, pas une maquette.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <figure class="screenshot-frame tilt reveal reveal-delay-1">
+        <div class="frame-bar"><span></span><span></span><span></span></div>
+        <img src="{{ url_for('static', filename='img/shot-transport.png') }}" alt="Carte du trajet et ordre de ramassage du transport scolaire" loading="lazy">
+        <figcaption>Transport — carte du trajet &amp; ordre de ramassage optimisé</figcaption>
+      </figure>
+
+      <figure class="screenshot-frame tilt reveal reveal-delay-2">
+        <div class="frame-bar"><span></span><span></span><span></span></div>
+        <img src="{{ url_for('static', filename='img/shot-flotte.png') }}" alt="Suivi en temps réel de la flotte de bus et des chauffeurs" loading="lazy">
+        <figcaption>Suivi de flotte — bus, chauffeurs et distance en temps réel</figcaption>
+      </figure>
+
+      <figure class="screenshot-frame tilt reveal reveal-delay-3">
+        <div class="frame-bar"><span></span><span></span><span></span></div>
+        <img src="{{ url_for('static', filename='img/shot-comptabilite.png') }}" alt="Analyse comptable : charges élèves et charges école" loading="lazy">
+        <figcaption>Comptabilité — analyse des charges élèves &amp; charges école</figcaption>
+      </figure>
+
+      <figure class="screenshot-frame tilt reveal reveal-delay-4">
+        <div class="frame-bar"><span></span><span></span><span></span></div>
+        <img src="{{ url_for('static', filename='img/shot-paiements.png') }}" alt="Liste des paiements et facturation par élève" loading="lazy">
+        <figcaption>Facturation — suivi des paiements, statuts et reçus par élève</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Le changement</span>
+      <h2>Avant ScaleUp, après ScaleUp</h2>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card before glass reveal">
+        <h4>Sans l'application</h4>
+        <ul>
+          <li>Suivi des paiements sur Excel</li>
+          <li>Absences signalées par téléphone</li>
+          <li>Bulletins remplis manuellement</li>
+          <li>Communication parents par cahier de liaison</li>
+          <li>Aucune vue d'ensemble en temps réel</li>
+        </ul>
+      </div>
+      <div class="compare-card after glass glow-border reveal reveal-delay-2">
+        <h4>Avec ScaleUp</h4>
+        <ul>
+          <li>Paiements et relances automatisés</li>
+          <li>Présence notifiée en direct aux parents</li>
+          <li>Bulletins générés automatiquement</li>
+          <li>Messagerie et SMS intégrés</li>
+          <li>Tableaux de bord en temps réel</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Tarifs</span>
+      <h2>Un tarif adapté à la taille de votre école</h2>
+      <p>Sans engagement, avec accompagnement au déploiement inclus.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card glass reveal reveal-delay-1">
+        <span class="tag">Essentiel</span>
+        <div class="price">990 DH<span>/mois</span></div>
+        <p>Pour les petits établissements qui démarrent leur digitalisation.</p>
+        <ul>
+          <li>Jusqu'à 300 élèves</li>
+          <li>Élèves, classes, présence</li>
+          <li>Paiements de base</li>
+          <li>Support par email</li>
+        </ul>
+        <a href="/#demo" class="btn btn-outline btn-block">Demander une démo</a>
+      </div>
+      <div class="price-card glass glow-border is-featured reveal reveal-delay-2">
+        <span class="tag">Croissance</span>
+        <div class="price">1 990 DH<span>/mois</span></div>
+        <p>La formule la plus choisie par les écoles multi-niveaux.</p>
+        <ul>
+          <li>Jusqu'à 1000 élèves</li>
+          <li>Tous les modules inclus</li>
+          <li>SMS &amp; notifications parents</li>
+          <li>Transport &amp; bulletins automatiques</li>
+          <li>Support prioritaire</li>
+        </ul>
+        <a href="/#demo" class="btn btn-primary btn-block">Demander une démo</a>
+      </div>
+      <div class="price-card glass reveal reveal-delay-3">
+        <span class="tag">Établissement</span>
+        <div class="price">Sur devis</div>
+        <p>Pour les groupes scolaires et besoins sur mesure.</p>
+        <ul>
+          <li>Élèves illimités</li>
+          <li>Multi-établissements</li>
+          <li>Intégrations sur mesure</li>
+          <li>Accompagnement dédié</li>
+        </ul>
+        <a href="/#demo" class="btn btn-outline btn-block">Nous contacter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>Tout ce qu'il faut savoir</h2>
+    </div>
+    <div class="faq-list">
+      {% set faqs = [
+        ("Faut-il une formation pour utiliser l'application ?","Non. L'interface est conçue pour être prise en main en quelques minutes. Une session de formation est toutefois incluse au démarrage."),
+        ("Les données de l'école sont-elles sécurisées ?","Oui, l'ensemble des données est hébergé et sauvegardé quotidiennement, avec un accès restreint selon les rôles de chaque utilisateur."),
+        ("Peut-on migrer nos données existantes ?","Oui, notre équipe s'occupe de l'import de vos données actuelles (Excel ou autre logiciel) sans interruption de service."),
+        ("Existe-t-il une version d'essai ?","Oui, une démonstration gratuite et personnalisée est proposée avant tout engagement."),
+        ("L'application fonctionne-t-elle sur mobile ?","Oui, elle est accessible depuis un ordinateur, une tablette ou un smartphone, sans installation."),
+      ] %}
+      {% for q, a in faqs %}
+      <div class="faq-item glass reveal">
+        <div class="faq-q"><span>{{ q }}</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>{{ a }}</p></div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-neon reveal">
+      <span class="eyebrow" style="justify-content:center">Démo gratuite</span>
+      <h2>Voyez l'application fonctionner sur vos propres données</h2>
+      <p>30 minutes suffisent pour comprendre comment ScaleUp peut simplifier la gestion de votre établissement.</p>
+      <a href="/#demo" class="btn btn-primary btn-magnetic">Réserver ma démo gratuite</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% block title %}Marketing Digital — ScaleUp{% endblock %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <div class="section-head center reveal is-visible">
+      <span class="eyebrow">Marketing digital</span>
+      <h1>Une présence qui <span class="grad-text">convertit</span>, pas seulement qui se voit.</h1>
+      <p>Community management, publicités et création de contenu pilotés par la donnée, pour transformer votre audience en clients.</p>
+      <div class="hero-actions" style="justify-content:center; margin-top:32px">
+        <a href="/#demo" class="btn btn-primary btn-magnetic">Demander un audit gratuit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="stat-strip">
+      <div class="stat-block glass reveal reveal-delay-1"><b><span data-counter="3.2" data-suffix="x">0x</span></b><span>ROI moyen constaté</span></div>
+      <div class="stat-block glass reveal reveal-delay-2"><b><span data-counter="65" data-suffix="+">0+</span></b><span>Campagnes pilotées</span></div>
+      <div class="stat-block glass reveal reveal-delay-3"><b><span data-counter="4.8" data-suffix="/5">0/5</span></b><span>Satisfaction client</span></div>
+      <div class="stat-block glass reveal reveal-delay-4"><b><span data-counter="12" data-suffix="M+">0M+</span></b><span>Impressions générées</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Ce que nous faisons</span>
+      <h2>Un pôle marketing complet, en une seule équipe</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card glass glow-border reveal reveal-delay-1">
+        <div class="service-icon">📱</div>
+        <h3>Community Management</h3>
+        <p>Une présence cohérente et engageante sur vos réseaux.</p>
+        <ul>
+          <li>Facebook &amp; Instagram</li>
+          <li>TikTok</li>
+          <li>Planification &amp; publication</li>
+          <li>Modération &amp; réponses</li>
+        </ul>
+      </div>
+      <div class="service-card glass glow-border reveal reveal-delay-2">
+        <div class="service-icon service-icon-pink">🎯</div>
+        <h3>Publicité &amp; Ads</h3>
+        <p>Des campagnes pilotées par la performance, pas par l'instinct.</p>
+        <ul>
+          <li>Facebook Ads</li>
+          <li>Google Ads</li>
+          <li>Ciblage &amp; retargeting</li>
+          <li>Suivi des conversions</li>
+        </ul>
+      </div>
+      <div class="service-card glass glow-border reveal reveal-delay-3">
+        <div class="service-icon">🎬</div>
+        <h3>Création de contenu</h3>
+        <p>Des contenus pensés pour capter l'attention et rassurer.</p>
+        <ul>
+          <li>Reels &amp; stories</li>
+          <li>Photographie produit</li>
+          <li>Direction artistique</li>
+          <li>Création graphique</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="app-showcase">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">Analyse des performances</span>
+        <h2>Chaque euro investi est mesuré</h2>
+        <p>Nous suivons vos campagnes en continu et ajustons le ciblage, les créations et les budgets selon les résultats réels, pas selon des hypothèses.</p>
+        <div class="tag-cloud">
+          <span>Taux de conversion</span>
+          <span>Coût par lead</span>
+          <span>Portée organique</span>
+          <span>Engagement</span>
+          <span>ROAS</span>
+        </div>
+      </div>
+      <div class="dash-wrap reveal reveal-delay-2">
+        <div class="dash-card tilt" style="animation:none; transform:none">
+          <div class="dash-topbar">
+            <div class="dash-dots"><span></span><span></span><span></span></div>
+            <div class="dash-title">CAMPAGNES — PERFORMANCE</div>
+          </div>
+          <div class="dash-main">
+            <div class="dash-panel">
+              <h5>Conversions — 6 semaines</h5>
+              <div class="mini-bars">
+                <i style="height:44%"></i><i style="height:52%"></i><i style="height:61%"></i>
+                <i style="height:70%"></i><i style="height:66%"></i><i style="height:85%"></i>
+              </div>
+            </div>
+            <div class="dash-panel">
+              <div class="donut"><span>3.2x</span></div>
+              <div class="donut-label">ROAS moyen</div>
+            </div>
+          </div>
+          <div class="dash-stats">
+            <div class="dash-stat"><span>Leads générés</span><b class="up">842</b></div>
+            <div class="dash-stat"><span>Coût / lead</span><b>39 DH</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Notre méthode</span>
+      <h2>Comment nous travaillons</h2>
+    </div>
+    <div class="timeline">
+      {% set steps = [
+        ("01","Audit","Analyse de votre présence actuelle et de votre positionnement."),
+        ("02","Proposition","Un plan média et éditorial chiffré, adapté à votre budget."),
+        ("03","Développement","Création des contenus, visuels et campagnes."),
+        ("04","Déploiement","Mise en ligne des campagnes et lancement du community management."),
+        ("05","Accompagnement","Suivi des performances et optimisation continue."),
+      ] %}
+      {% for num, title, desc in steps %}
+      <div class="tl-item reveal">
+        <div class="tl-num">{{ num }}</div>
+        <div class="tl-content">
+          <h4>{{ title }}</h4>
+          <p>{{ desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>Le marketing digital, sans jargon</h2>
+    </div>
+    <div class="faq-list">
+      {% set faqs = [
+        ("Sur combien de temps s'engage-t-on ?","Nos accompagnements démarrent généralement sur 3 mois, le temps nécessaire pour tester, mesurer et optimiser. Sans engagement au-delà de cette période."),
+        ("Faut-il un budget publicitaire en plus de vos honoraires ?","Oui, le budget diffusé sur Facebook Ads ou Google Ads est distinct de nos honoraires de gestion et reste entièrement sous votre contrôle."),
+        ("Qui crée les contenus (photos, vidéos, textes) ?","Notre équipe de création s'en charge : direction artistique, tournage, montage et rédaction, en cohérence avec votre identité de marque."),
+        ("Comment savoir si les campagnes fonctionnent ?","Vous recevez un rapport de performance régulier avec les indicateurs clés : leads générés, coût par lead, taux de conversion et ROAS."),
+        ("Travaillez-vous avec des écoles ou uniquement des entreprises ?","Les deux. Nous adaptons la stratégie de contenu et de ciblage selon qu'il s'agisse d'un établissement scolaire, d'une PME ou d'une startup."),
+      ] %}
+      {% for q, a in faqs %}
+      <div class="faq-item glass reveal">
+        <div class="faq-q"><span>{{ q }}</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>{{ a }}</p></div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-neon reveal">
+      <span class="eyebrow" style="justify-content:center">Audit gratuit</span>
+      <h2>Découvrez le potentiel inexploité de vos réseaux</h2>
+      <p>Nous analysons votre présence actuelle et vous proposons un plan d'action concret, sans engagement.</p>
+      <a href="/#demo" class="btn btn-primary btn-magnetic">Demander mon audit gratuit</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

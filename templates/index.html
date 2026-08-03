@@ -1,0 +1,338 @@
+{% extends "base.html" %}
+{% block title %}ScaleUp — Transformez votre entreprise grâce au digital{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal is-visible">
+      <span class="eyebrow">Agence de transformation digitale</span>
+      <h1>Transformez votre entreprise grâce au <span class="grad-text">digital.</span></h1>
+      <p class="lede">Nous accompagnons les écoles et les entreprises dans leur transformation numérique grâce à des applications performantes, au marketing digital et à la digitalisation.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-outline">Découvrir nos services</a>
+        <a href="#demo" class="btn btn-primary btn-magnetic">Demander une démo</a>
+      </div>
+      <div class="hero-trust">
+        <div class="stat"><b><span data-counter="120" data-suffix="+">0+</span></b><span>Écoles équipées</span></div>
+        <div class="stat"><b><span data-counter="98" data-suffix="%">0%</span></b><span>Clients satisfaits</span></div>
+        <div class="stat"><b><span data-counter="40" data-suffix="+">0+</span></b><span>Projets digitaux livrés</span></div>
+      </div>
+    </div>
+
+    <div class="dash-wrap reveal reveal-delay-2 is-visible">
+      <div class="dash-float f1">
+        <div class="label">Paiements du jour</div>
+        <div class="value"><span class="dot"></span> 48 200 DH</div>
+      </div>
+
+      <div class="dash-card">
+        <div class="dash-topbar">
+          <div class="dash-dots"><span></span><span></span><span></span></div>
+          <div class="dash-title">ÉCOLE — TABLEAU DE BORD</div>
+        </div>
+
+        <div class="dash-stats">
+          <div class="dash-stat"><span>Élèves</span><b class="up">1 284</b></div>
+          <div class="dash-stat"><span>Présence</span><b>96%</b></div>
+          <div class="dash-stat"><span>Impayés</span><b class="warn">12</b></div>
+        </div>
+
+        <div class="dash-main">
+          <div class="dash-panel">
+            <h5>Paiements — 6 derniers mois</h5>
+            <div class="mini-bars">
+              <i style="height:38%; animation-delay:.05s"></i>
+              <i style="height:55%; animation-delay:.1s"></i>
+              <i style="height:47%; animation-delay:.15s"></i>
+              <i style="height:72%; animation-delay:.2s"></i>
+              <i style="height:64%; animation-delay:.25s"></i>
+              <i style="height:88%; animation-delay:.3s"></i>
+            </div>
+          </div>
+          <div class="dash-panel">
+            <h5>Présence globale</h5>
+            <div class="donut"><span>87%</span></div>
+            <div class="donut-label">Sur la semaine</div>
+          </div>
+        </div>
+
+        <div class="dash-list">
+          <div class="dash-row">
+            <div class="who"><span class="avatar"></span> Salma B. — CE2</div>
+            <span class="pill ok">Payé</span>
+          </div>
+          <div class="dash-row">
+            <div class="who"><span class="avatar"></span> Yassine T. — 5e</div>
+            <span class="pill wait">En attente</span>
+          </div>
+          <div class="dash-row">
+            <div class="who"><span class="avatar"></span> Nour E. — CM1</div>
+            <span class="pill ok">Payé</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-float f2">
+        <div class="label">Transport</div>
+        <div class="value">Circuit A — 32/32 ✓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:0; padding-bottom:60px">
+  <div class="container">
+    <div class="marquee reveal is-visible">
+      <div class="marquee-track">
+        {% for tag in ["Écoles primaires","Collèges & lycées","Groupes scolaires","PME","Startups","Associations","Instituts de formation"] * 2 %}
+        <span class="marquee-item">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Nos expertises</span>
+      <h2>Trois leviers, une seule agence</h2>
+      <p>Chaque service est conçu pour se combiner aux autres et accélérer votre transformation.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card glass glow-border reveal reveal-delay-1">
+        <div class="service-icon">🏫</div>
+        <h3>Application de Gestion d'École</h3>
+        <p>Une plateforme complète pour piloter votre établissement au quotidien.</p>
+        <ul>
+          <li>Gestion complète des élèves</li>
+          <li>Paiements &amp; facturation</li>
+          <li>Notes &amp; bulletins</li>
+          <li>Présence &amp; transport</li>
+          <li>Communication parents</li>
+          <li>Statistiques en temps réel</li>
+        </ul>
+        <a href="/application" class="card-link">Découvrir l'application <span class="arrow">→</span></a>
+      </div>
+
+      <div class="service-card glass glow-border reveal reveal-delay-2">
+        <div class="service-icon service-icon-pink">📈</div>
+        <h3>Marketing Digital</h3>
+        <p>Une présence forte et des campagnes qui convertissent, sur tous les canaux.</p>
+        <ul>
+          <li>Facebook &amp; Instagram</li>
+          <li>TikTok &amp; création de contenu</li>
+          <li>Community management</li>
+          <li>Facebook Ads &amp; Google Ads</li>
+        </ul>
+        <a href="/marketing" class="card-link">Voir nos services marketing <span class="arrow">→</span></a>
+      </div>
+
+      <div class="service-card glass glow-border reveal reveal-delay-3">
+        <div class="service-icon">⚙️</div>
+        <h3>Digitalisation</h3>
+        <p>Vos process métiers automatisés, connectés et pilotés depuis le cloud.</p>
+        <ul>
+          <li>Applications web sur mesure</li>
+          <li>Automatisation des tâches</li>
+          <li>CRM &amp; ERP</li>
+          <li>Gestion documentaire &amp; cloud</li>
+        </ul>
+        <a href="/digitalisation" class="card-link">Explorer la digitalisation <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="app-showcase">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Notre produit phare</span>
+      <h2>Une application qui gère toute la vie scolaire</h2>
+      <p>Élèves, enseignants, parents, paiements, transport, examens — tout est réuni dans une seule interface, pensée pour être utilisée dès le premier jour.</p>
+    </div>
+
+    <div class="modules-grid">
+      {% set modules = [
+        ("👩‍🎓","Élèves","Dossiers, inscriptions et suivi individuel"),
+        ("🧑‍🏫","Enseignants","Emplois du temps et charge de cours"),
+        ("👨‍👩‍👧","Parents","Portail dédié et suivi en direct"),
+        ("🏷️","Classes","Organisation par niveau et section"),
+        ("💳","Paiements","Encaissements et relances automatiques"),
+        ("🧾","Facturation","Factures et reçus générés automatiquement"),
+        ("🚌","Transport","Circuits, présence et géolocalisation"),
+        ("💬","SMS","Notifications instantanées aux parents"),
+        ("📄","Bulletins","Génération automatique des bulletins"),
+        ("✅","Présence","Pointage quotidien élèves et professeurs"),
+        ("📊","Statistiques","Indicateurs clés de l'établissement"),
+        ("🗓️","Emploi du temps","Planification visuelle et flexible"),
+        ("📝","Examens","Notes, moyennes et classements"),
+        ("📈","Tableaux de bord","Vue d'ensemble en un coup d'œil"),
+      ] %}
+      {% for icon, title, desc in modules %}
+      <div class="module-card glass reveal reveal-delay-{{ loop.index0 % 4 + 1 }}">
+        <div class="module-icon">{{ icon }}</div>
+        <h4>{{ title }}</h4>
+        <p>{{ desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="showcase-bottom reveal">
+      <a href="/application" class="btn btn-primary btn-magnetic">Voir l'application en détail</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Pourquoi choisir notre plateforme ? — section avantages premium
+     12 cartes (icônes FontAwesome) + bande de chiffres animés.
+     Remplace l'ancienne section "Pourquoi ScaleUp" (8 items génériques).
+============================================================ -->
+<section id="pourquoi">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Pourquoi ScaleUp</span>
+      <h2>Pourquoi choisir notre plateforme ?</h2>
+      <p>Une solution moderne, sécurisée et conçue pour simplifier la gestion de votre établissement scolaire.</p>
+    </div>
+
+    <div class="why-grid">
+      {% set why_items = [
+        ("fa-solid fa-lock","Sécurité des données","Vos données sont protégées grâce à un chiffrement sécurisé et des accès contrôlés."),
+        ("fa-solid fa-earth-europe","Hébergement sécurisé en Europe","Les données sont hébergées dans des centres de données européens offrant une haute disponibilité."),
+        ("fa-solid fa-cloud-arrow-up","Sauvegardes automatiques","Des sauvegardes régulières garantissent la récupération de vos données."),
+        ("fa-solid fa-bolt","Haute performance","Application rapide, optimisée et accessible 24h/24."),
+        ("fa-solid fa-mobile-screen-button","Compatible tous les appareils","Fonctionne parfaitement sur ordinateur, tablette et smartphone."),
+        ("fa-solid fa-comments","Communication avec les parents","Relance des paiements et notifications via WhatsApp et l'application."),
+        ("fa-solid fa-sack-dollar","Gestion des paiements","Suivi des paiements, factures, soldes et statistiques financières."),
+        ("fa-solid fa-chart-line","Analyses intelligentes","Graphiques modernes et indicateurs de performance en temps réel."),
+        ("fa-solid fa-graduation-cap","Gestion complète des élèves","Notes, absences, bulletins, dossiers et suivi pédagogique."),
+        ("fa-solid fa-chalkboard-user","Gestion des enseignants","Planning, classes, statistiques et suivi administratif."),
+        ("fa-solid fa-file-export","Rapports automatiques","Export PDF et Excel en quelques clics."),
+        ("fa-solid fa-rocket","Mises à jour continues","La plateforme évolue régulièrement avec de nouvelles fonctionnalités."),
+      ] %}
+      {% for icon, title, desc in why_items %}
+      <div class="why-card glass reveal reveal-delay-{{ loop.index0 % 4 + 1 }}">
+        {# Icônes roses en alternance pour rappeler la couleur néon de la marque sans surcharger la grille #}
+        <div class="why-icon{{ ' pink' if loop.index0 % 3 == 2 else '' }}"><i class="{{ icon }}" aria-hidden="true"></i></div>
+        <h4>{{ title }}</h4>
+        <p>{{ desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Bande de chiffres clés, avec compteurs animés (voir data-counter dans main.js) -->
+    <div class="stats-band glass glow-border reveal">
+      <div class="stat-strip">
+        <div class="stat-block">
+          <b>+<span data-counter="10000">0</span></b>
+          <span>élèves gérés</span>
+        </div>
+        <div class="stat-block">
+          <b><span data-counter="99.9" data-suffix="%">0%</span></b>
+          <span>Disponibilité</span>
+        </div>
+        <div class="stat-block">
+          <b><span data-counter="24" data-suffix="/7">0/7</span></b>
+          <span>Accès sécurisé</span>
+        </div>
+        <div class="stat-block">
+          <b><span data-counter="100" data-suffix="%">0%</span></b>
+          <span>Cloud</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Notre méthode</span>
+      <h2>Comment nous travaillons</h2>
+      <p>Un process en cinq étapes, du premier échange jusqu'à l'accompagnement long terme.</p>
+    </div>
+
+    <div class="timeline">
+      {% set steps = [
+        ("01","Audit","Analyse de vos besoins, de vos outils actuels et de vos objectifs."),
+        ("02","Proposition","Une solution sur mesure, chiffrée et priorisée avec vous."),
+        ("03","Développement","Conception et développement de votre application ou de vos campagnes."),
+        ("04","Déploiement","Mise en ligne, formation des équipes et tests en conditions réelles."),
+        ("05","Accompagnement","Support continu, évolutions et optimisation dans la durée."),
+      ] %}
+      {% for num, title, desc in steps %}
+      <div class="tl-item reveal">
+        <div class="tl-num">{{ num }}</div>
+        <div class="tl-content">
+          <h4>{{ title }}</h4>
+          <p>{{ desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-neon reveal">
+      <span class="eyebrow" style="justify-content:center">Prêt à passer à l'étape suivante</span>
+      <h2>Prêt à digitaliser votre établissement&nbsp;?</h2>
+      <p>Réservez un échange de 30 minutes avec notre équipe pour découvrir l'application en conditions réelles.</p>
+      <a href="#demo" class="btn btn-primary btn-magnetic">Réserver une démonstration</a>
+    </div>
+  </div>
+</section>
+
+<section id="demo" class="section-tight">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">Demande de démo</span>
+        <h2>Discutons de votre projet</h2>
+        <p>Laissez-nous vos coordonnées, un membre de l'équipe vous recontacte sous 24h ouvrées pour organiser votre démonstration personnalisée.</p>
+        <ul class="check-list">
+          <li><span class="ico">✓</span> Démonstration adaptée à votre établissement ou entreprise</li>
+          <li><span class="ico">✓</span> Aucun engagement</li>
+          <li><span class="ico">✓</span> Réponse sous 24h ouvrées</li>
+        </ul>
+      </div>
+      <form class="demo-form glass glow-border reveal reveal-delay-2" style="padding:32px" id="demoForm">
+        <div>
+          <label for="name">Nom complet</label>
+          <input id="name" name="name" type="text" placeholder="Votre nom" required>
+        </div>
+        <div>
+          <label for="org">Établissement / Entreprise</label>
+          <input id="org" name="org" type="text" placeholder="Nom de la structure" required>
+        </div>
+        <div class="full">
+          <label for="email">Email professionnel</label>
+          <input id="email" name="email" type="email" placeholder="vous@exemple.com" required>
+        </div>
+        <div class="full">
+          <label for="service">Service qui vous intéresse</label>
+          <select id="service" name="service">
+            <option>Application de gestion d'école</option>
+            <option>Marketing digital</option>
+            <option>Digitalisation</option>
+            <option>Je ne sais pas encore</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="msg">Message (optionnel)</label>
+          <textarea id="msg" name="message" rows="3" placeholder="Parlez-nous de votre besoin"></textarea>
+        </div>
+        <div class="full">
+          <button type="submit" class="btn btn-primary btn-block">Envoyer ma demande</button>
+          <p id="demoFormStatus" style="margin:12px 0 0; font-size:.85rem;"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
