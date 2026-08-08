@@ -9,7 +9,7 @@
       <h1>L'application qui pilote <span class="grad-text">toute la vie scolaire.</span></h1>
       <p>Élèves, enseignants, parents, paiements, transport, examens : une seule plateforme, pensée pour les écoles qui veulent gagner du temps sans perdre le contrôle.</p>
       <div class="hero-actions" style="justify-content:center; margin-top:32px">
-        <a href="/#demo" class="btn btn-primary btn-magnetic">Essayer gratuitement</a>
+        <a href="/contact" class="btn btn-primary btn-magnetic">Essayer gratuitement</a>
         <a href="#tarifs" class="btn btn-outline">Voir les tarifs</a>
       </div>
     </div>
@@ -21,11 +21,40 @@
     <div class="section-head center reveal">
       <span class="eyebrow">Interface réelle</span>
       <h2>Ce que voit votre équipe au quotidien</h2>
-      <p>Aucune maquette : voici un véritable écran de l'application, avec son moteur d'analyse pédagogique intégré.</p>
+      <p>Aucune maquette : chaque écran ci-dessous est une vraie capture de l'application, moteur d'analyse pédagogique, transport, comptabilité et paiements inclus.</p>
     </div>
-    <div class="screenshot-frame tilt reveal reveal-delay-2" style="max-width:1040px; margin:0 auto">
-      <div class="frame-bar"><span></span><span></span><span></span></div>
-      <img src="{{ url_for('static', filename='img/app-screenshot.png') }}" alt="Tableau de bord d'analyse pédagogique de l'application ScaleUp" loading="lazy">
+    <div class="app-slider tilt reveal reveal-delay-2">
+      <div class="slider-viewport">
+        <div class="slide is-active">
+          <img src="{{ url_for('static', filename='img/app-screenshot.png') }}" alt="Tableau de bord d'analyse pédagogique" loading="lazy">
+          <span class="slide-caption">Analyse pédagogique</span>
+        </div>
+        <div class="slide">
+          <img src="{{ url_for('static', filename='img/shot-transport.png') }}" alt="Carte du trajet et ordre de ramassage" loading="lazy">
+          <span class="slide-caption">Transport &amp; itinéraires</span>
+        </div>
+        <div class="slide">
+          <img src="{{ url_for('static', filename='img/shot-flotte.png') }}" alt="Suivi de flotte en temps réel" loading="lazy">
+          <span class="slide-caption">Suivi de flotte en temps réel</span>
+        </div>
+        <div class="slide">
+          <img src="{{ url_for('static', filename='img/shot-comptabilite.png') }}" alt="Analyse comptable" loading="lazy">
+          <span class="slide-caption">Analyse comptable</span>
+        </div>
+        <div class="slide">
+          <img src="{{ url_for('static', filename='img/shot-paiements.png') }}" alt="Liste des paiements" loading="lazy">
+          <span class="slide-caption">Facturation &amp; paiements</span>
+        </div>
+        <button class="slider-arrow prev" aria-label="Capture précédente">‹</button>
+        <button class="slider-arrow next" aria-label="Capture suivante">›</button>
+        <div class="slider-dots">
+          <button class="dot is-active" aria-label="Capture 1"></button>
+          <button class="dot" aria-label="Capture 2"></button>
+          <button class="dot" aria-label="Capture 3"></button>
+          <button class="dot" aria-label="Capture 4"></button>
+          <button class="dot" aria-label="Capture 5"></button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -176,42 +205,6 @@
   </div>
 </section>
 
-<section class="section-tight">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Encore plus en images</span>
-      <h2>D'autres modules, en conditions réelles</h2>
-      <p>Transport, suivi de flotte, comptabilité : chaque écran ci-dessous est une vraie capture de l'application, pas une maquette.</p>
-    </div>
-
-    <div class="gallery-grid">
-      <figure class="screenshot-frame tilt reveal reveal-delay-1">
-        <div class="frame-bar"><span></span><span></span><span></span></div>
-        <img src="{{ url_for('static', filename='img/shot-transport.png') }}" alt="Carte du trajet et ordre de ramassage du transport scolaire" loading="lazy">
-        <figcaption>Transport — carte du trajet &amp; ordre de ramassage optimisé</figcaption>
-      </figure>
-
-      <figure class="screenshot-frame tilt reveal reveal-delay-2">
-        <div class="frame-bar"><span></span><span></span><span></span></div>
-        <img src="{{ url_for('static', filename='img/shot-flotte.png') }}" alt="Suivi en temps réel de la flotte de bus et des chauffeurs" loading="lazy">
-        <figcaption>Suivi de flotte — bus, chauffeurs et distance en temps réel</figcaption>
-      </figure>
-
-      <figure class="screenshot-frame tilt reveal reveal-delay-3">
-        <div class="frame-bar"><span></span><span></span><span></span></div>
-        <img src="{{ url_for('static', filename='img/shot-comptabilite.png') }}" alt="Analyse comptable : charges élèves et charges école" loading="lazy">
-        <figcaption>Comptabilité — analyse des charges élèves &amp; charges école</figcaption>
-      </figure>
-
-      <figure class="screenshot-frame tilt reveal reveal-delay-4">
-        <div class="frame-bar"><span></span><span></span><span></span></div>
-        <img src="{{ url_for('static', filename='img/shot-paiements.png') }}" alt="Liste des paiements et facturation par élève" loading="lazy">
-        <figcaption>Facturation — suivi des paiements, statuts et reçus par élève</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
 <section>
   <div class="container">
     <div class="section-head center reveal">
@@ -261,7 +254,7 @@
           <li>Paiements de base</li>
           <li>Support par email</li>
         </ul>
-        <a href="/#demo" class="btn btn-outline btn-block">Demander une démo</a>
+        <a href="/contact" class="btn btn-outline btn-block">Demander une démo</a>
       </div>
       <div class="price-card glass glow-border is-featured reveal reveal-delay-2">
         <span class="tag">Croissance</span>
@@ -274,7 +267,7 @@
           <li>Transport &amp; bulletins automatiques</li>
           <li>Support prioritaire</li>
         </ul>
-        <a href="/#demo" class="btn btn-primary btn-block">Demander une démo</a>
+        <a href="/contact" class="btn btn-primary btn-block">Demander une démo</a>
       </div>
       <div class="price-card glass reveal reveal-delay-3">
         <span class="tag">Établissement</span>
@@ -286,7 +279,7 @@
           <li>Intégrations sur mesure</li>
           <li>Accompagnement dédié</li>
         </ul>
-        <a href="/#demo" class="btn btn-outline btn-block">Nous contacter</a>
+        <a href="/contact" class="btn btn-outline btn-block">Nous contacter</a>
       </div>
     </div>
   </div>
@@ -322,7 +315,7 @@
       <span class="eyebrow" style="justify-content:center">Démo gratuite</span>
       <h2>Voyez l'application fonctionner sur vos propres données</h2>
       <p>30 minutes suffisent pour comprendre comment ScaleUp peut simplifier la gestion de votre établissement.</p>
-      <a href="/#demo" class="btn btn-primary btn-magnetic">Réserver ma démo gratuite</a>
+      <a href="/contact" class="btn btn-primary btn-magnetic">Réserver ma démo gratuite</a>
     </div>
   </div>
 </section>
