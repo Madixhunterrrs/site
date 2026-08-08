@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+{% block title %}Cabinets médicaux — ScaleUp{% endblock %}
+{% block content %}
+
+<section class="page-hero" style="padding-bottom:50px">
+  <div class="container">
+    <a href="/" class="back-link"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Choisir un autre domaine</a>
+    <div class="section-head center reveal is-visible">
+      <span class="eyebrow">Cabinets médicaux &amp; cliniques</span>
+      <h1>Développez votre patientèle, <span class="grad-text">simplifiez votre gestion.</span></h1>
+      <p>Marketing digital et digitalisation pensés pour les cabinets médicaux : plus de visibilité, moins de tâches administratives.</p>
+      <div class="hero-actions" style="justify-content:center; margin-top:32px">
+        <a href="#services" class="btn btn-outline">Voir les services</a>
+        <a href="/contact?service=medecin" class="btn btn-primary btn-magnetic">Demander une démo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:0">
+  <div class="container">
+    <div class="marquee reveal is-visible">
+      <div class="marquee-track">
+        {% for tag in ["Cabinets généralistes","Cliniques","Cabinets dentaires","Kinésithérapeutes","Centres médicaux"] * 2 %}
+        <span class="marquee-item">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Nos services pour votre cabinet</span>
+      <h2>Deux leviers, un seul objectif : votre croissance</h2>
+    </div>
+
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">Marketing Digital</span>
+        <h2>Faites connaître votre cabinet en ligne</h2>
+        <p>Une présence professionnelle sur les réseaux, des campagnes Google &amp; Facebook Ads ciblées localement, et des rappels de rendez-vous automatisés par WhatsApp pour réduire les absences.</p>
+        <ul class="check-list">
+          <li><span class="ico">✓</span> Visibilité locale (Google Ads, réseaux sociaux)</li>
+          <li><span class="ico">✓</span> Rappels &amp; confirmations de rendez-vous</li>
+          <li><span class="ico">✓</span> Création de contenu professionnel</li>
+        </ul>
+        <a href="/marketing" class="card-link">Voir nos services marketing <span class="arrow">→</span></a>
+      </div>
+
+      <!-- Illustration originale (mockup), pas une photo de banque d'images -->
+      <div class="dash-wrap reveal reveal-delay-2">
+        <div class="dash-card tilt" style="animation:none; transform:none">
+          <div class="dash-topbar">
+            <div class="dash-dots"><span></span><span></span><span></span></div>
+            <div class="dash-title">RAPPELS DE RENDEZ-VOUS</div>
+          </div>
+          <div class="dash-list">
+            <div class="dash-row"><div class="who"><span class="avatar"></span> Mme Alaoui — 14:30</div><span class="pill ok">Confirmé</span></div>
+            <div class="dash-row"><div class="who"><span class="avatar"></span> M. Bennis — 15:00</div><span class="pill wait">Rappel envoyé</span></div>
+            <div class="dash-row"><div class="who"><span class="avatar"></span> Mme Idrissi — 16:15</div><span class="pill ok">Confirmé</span></div>
+          </div>
+          <div class="dash-main" style="margin-top:14px">
+            <div class="dash-panel">
+              <h5>Portée des campagnes</h5>
+              <div class="mini-bars">
+                <i style="height:42%"></i><i style="height:58%"></i><i style="height:66%"></i>
+                <i style="height:74%"></i><i style="height:70%"></i><i style="height:88%"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="app-showcase section-tight">
+  <div class="container">
+    <div class="two-col">
+      <div class="dash-wrap reveal" style="order:2">
+        <div class="dash-card tilt" style="animation:none; transform:none">
+          <div class="dash-topbar">
+            <div class="dash-dots"><span></span><span></span><span></span></div>
+            <div class="dash-title">CABINET — VUE D'ENSEMBLE</div>
+          </div>
+          <div class="dash-stats">
+            <div class="dash-stat"><span>Dossiers numérisés</span><b class="up">1 840</b></div>
+            <div class="dash-stat"><span>RDV en ligne</span><b>312</b></div>
+            <div class="dash-stat"><span>Uptime</span><b>99.9%</b></div>
+          </div>
+          <div class="dash-panel">
+            <h5>Charge système — 7 jours</h5>
+            <div class="mini-bars">
+              <i style="height:48%"></i><i style="height:60%"></i><i style="height:55%"></i>
+              <i style="height:68%"></i><i style="height:62%"></i><i style="height:78%"></i><i style="height:70%"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2" style="order:1">
+        <span class="eyebrow">Digitalisation</span>
+        <h2>Vos dossiers patients, enfin centralisés</h2>
+        <p>Fini les dossiers papier éparpillés : agenda en ligne, dossiers patients numérisés et sécurisés, et automatisation des tâches administratives répétitives.</p>
+        <ul class="check-list">
+          <li><span class="ico">✓</span> Agenda &amp; prise de rendez-vous en ligne</li>
+          <li><span class="ico">✓</span> Dossiers patients centralisés et sécurisés</li>
+          <li><span class="ico">✓</span> Automatisation des tâches administratives</li>
+        </ul>
+        <a href="/digitalisation" class="card-link">Explorer la digitalisation <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Pourquoi ScaleUp</span>
+      <h2>Pensé pour la confidentialité de vos données patients</h2>
+    </div>
+    <div class="why-grid">
+      {% set why_items_med = [
+        ("fa-solid fa-lock","Sécurité des données","Vos données patients sont protégées par un chiffrement sécurisé et des accès contrôlés."),
+        ("fa-solid fa-earth-europe","Hébergement sécurisé en Europe","Centres de données européens offrant une haute disponibilité."),
+        ("fa-solid fa-comments","Communication avec les patients","Rappels de rendez-vous et notifications automatiques via WhatsApp."),
+        ("fa-solid fa-chart-line","Analyses intelligentes","Suivi de vos campagnes et de votre patientèle en temps réel."),
+        ("fa-solid fa-bolt","Haute performance","Une plateforme rapide, accessible 24h/24 depuis tous vos appareils."),
+        ("fa-solid fa-rocket","Mises à jour continues","La plateforme évolue régulièrement avec de nouvelles fonctionnalités."),
+      ] %}
+      {% for icon, title, desc in why_items_med %}
+      <div class="why-card glass reveal reveal-delay-{{ loop.index0 % 4 + 1 }}">
+        <div class="why-icon{{ ' pink' if loop.index0 % 3 == 2 else '' }}"><i class="{{ icon }}" aria-hidden="true"></i></div>
+        <h4>{{ title }}</h4>
+        <p>{{ desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="stats-band glass glow-border reveal">
+      <div class="stat-strip" style="grid-template-columns:repeat(3,1fr)">
+        <div class="stat-block"><b><span data-counter="99.9" data-suffix="%">0%</span></b><span>Disponibilité</span></div>
+        <div class="stat-block"><b><span data-counter="24" data-suffix="/7">0/7</span></b><span>Accès sécurisé</span></div>
+        <div class="stat-block"><b><span data-counter="100" data-suffix="%">0%</span></b><span>Cloud</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Le changement</span>
+      <h2>Avant ScaleUp, après ScaleUp</h2>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card before glass reveal">
+        <h4>Sans ScaleUp</h4>
+        <ul>
+          <li>Rendez-vous pris uniquement par téléphone</li>
+          <li>Absences fréquentes faute de rappel</li>
+          <li>Dossiers patients sur papier</li>
+          <li>Aucune visibilité en ligne</li>
+          <li>Tâches administratives chronophages</li>
+        </ul>
+      </div>
+      <div class="compare-card after glass glow-border reveal reveal-delay-2">
+        <h4>Avec ScaleUp</h4>
+        <ul>
+          <li>Prise de rendez-vous en ligne</li>
+          <li>Rappels automatiques par WhatsApp</li>
+          <li>Dossiers patients numérisés et sécurisés</li>
+          <li>Présence professionnelle sur les réseaux et Google</li>
+          <li>Automatisation des tâches répétitives</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Notre méthode</span>
+      <h2>Comment nous travaillons</h2>
+    </div>
+    <div class="timeline">
+      {% set steps = [
+        ("01","Audit","Analyse de votre présence actuelle et de vos outils de gestion."),
+        ("02","Proposition","Un plan d'action chiffré, adapté à votre cabinet."),
+        ("03","Développement","Création des campagnes et/ou mise en place des outils digitaux."),
+        ("04","Déploiement","Mise en ligne et prise en main par votre équipe."),
+        ("05","Accompagnement","Suivi des performances et amélioration continue."),
+      ] %}
+      {% for num, title, desc in steps %}
+      <div class="tl-item reveal">
+        <div class="tl-num">{{ num }}</div>
+        <div class="tl-content">
+          <h4>{{ title }}</h4>
+          <p>{{ desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-neon reveal">
+      <span class="eyebrow" style="justify-content:center">Prêt à passer à l'étape suivante</span>
+      <h2>Prêt à développer votre cabinet&nbsp;?</h2>
+      <p>Réservez un échange de 30 minutes avec notre équipe pour discuter de votre visibilité et de votre gestion administrative.</p>
+      <a href="/contact?service=medecin" class="btn btn-primary btn-magnetic">Réserver une démonstration</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

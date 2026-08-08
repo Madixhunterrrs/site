@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Demander une démo — ScaleUp{% endblock %}
+{% block content %}
+
+<section class="page-hero" style="padding-bottom:20px">
+  <div class="container">
+    <div class="section-head center reveal is-visible">
+      <span class="eyebrow">Demande de démo</span>
+      <h1>Discutons de votre projet</h1>
+      <p>Laissez-nous vos coordonnées, un membre de l'équipe vous recontacte sous 24h ouvrées pour organiser votre démonstration personnalisée.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:20px">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <ul class="check-list">
+          <li><span class="ico">✓</span> Démonstration adaptée à votre établissement ou cabinet</li>
+          <li><span class="ico">✓</span> Aucun engagement</li>
+          <li><span class="ico">✓</span> Réponse sous 24h ouvrées</li>
+        </ul>
+        <p style="margin-top:28px">Vous pouvez aussi nous écrire directement :</p>
+        <ul class="check-list">
+          <li><span class="ico"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span> <a href="mailto:scaleupadministration@gmail.com">scaleupadministration@gmail.com</a></li>
+          <li><span class="ico"><i class="fa-solid fa-phone" aria-hidden="true"></i></span> <a href="tel:+212640379092">+212 6 40 37 90 92</a></li>
+          <li><span class="ico"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span> Fès, Maroc</li>
+        </ul>
+      </div>
+
+      <form class="demo-form glass glow-border reveal reveal-delay-2" style="padding:32px" id="demoForm">
+        <div>
+          <label for="name">Nom complet</label>
+          <input id="name" name="name" type="text" placeholder="Votre nom" required>
+        </div>
+        <div>
+          <label for="org">Établissement / Cabinet</label>
+          <input id="org" name="org" type="text" placeholder="Nom de la structure" required>
+        </div>
+        <div class="full">
+          <label for="email">Email professionnel</label>
+          <input id="email" name="email" type="email" placeholder="vous@exemple.com" required>
+        </div>
+        <div class="full">
+          <label for="service">Service qui vous intéresse</label>
+          <select id="service" name="service">
+            <option value="Application de gestion d'école" {{ 'selected' if preselect == 'ecole' }}>Application de gestion d'école</option>
+            <option value="Marketing digital" {{ 'selected' if preselect == 'marketing' }}>Marketing digital</option>
+            <option value="Digitalisation" {{ 'selected' if preselect == 'digitalisation' }}>Digitalisation</option>
+            <option value="Cabinet médical — marketing & digitalisation" {{ 'selected' if preselect == 'medecin' }}>Cabinet médical — marketing &amp; digitalisation</option>
+            <option value="Je ne sais pas encore" {{ 'selected' if not preselect }}>Je ne sais pas encore</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="msg">Message (optionnel)</label>
+          <textarea id="msg" name="message" rows="3" placeholder="Parlez-nous de votre besoin"></textarea>
+        </div>
+        <div class="full">
+          <button type="submit" class="btn btn-primary btn-block btn-magnetic">Envoyer ma demande</button>
+          <p id="demoFormStatus" style="margin:12px 0 0; font-size:.85rem;"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

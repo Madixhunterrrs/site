@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block title %}Gérer le slider — ScaleUp{% endblock %}
+{% block content %}
+
+<section class="page-hero" style="padding-bottom:30px">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:8px;">
+      <div class="section-head" style="margin:0">
+        <span class="eyebrow">Panneau de contrôle</span>
+        <h1 style="font-size:1.9rem">Slider de la page d'accueil</h1>
+      </div>
+      <div style="display:flex; gap:12px;">
+        <a href="/admin" class="btn btn-outline btn-sm">← Demandes</a>
+        <a href="/admin/logout" class="btn btn-outline btn-sm">Se déconnecter</a>
+      </div>
+    </div>
+    <p>Ces bannières défilent automatiquement tout en haut de la page d'accueil. Tant qu'aucune n'est ajoutée ici, 4 bannières par défaut (une par service) s'affichent à la place.</p>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:0">
+  <div class="container">
+    <div class="two-col" style="align-items:start">
+
+      <!-- Formulaire d'ajout -->
+      <div class="glass glow-border reveal" style="padding:32px">
+        <h3 style="margin-bottom:6px">Ajouter une promotion</h3>
+        <p style="margin-bottom:4px">
+          <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+          Dimensions recommandées pour l'image : <strong>{{ recommended_size }}</strong> — JPG, PNG ou WebP, 2 Mo max.
+        </p>
+        <p style="margin-bottom:24px; font-size:.82rem;">L'image remplit toute la bannière (format paysage large) ; sans image, un fond dégradé de la marque est utilisé.</p>
+
+        {% if upload_error == 'format' %}
+        <p style="color:#F87171; font-size:.85rem; margin-bottom:16px;">Format d'image non accepté. Utilisez JPG, PNG ou WebP.</p>
+        {% elif upload_error == 'taille' %}
+        <p style="color:#F87171; font-size:.85rem; margin-bottom:16px;">Fichier trop volumineux (2 Mo max recommandé, 6 Mo max absolu).</p>
+        {% elif upload_error == 'titre' %}
+        <p style="color:#F87171; font-size:.85rem; margin-bottom:16px;">Le titre est obligatoire.</p>
+        {% endif %}
+
+        <form method="POST" action="/admin/promos" enctype="multipart/form-data" class="demo-form" style="grid-template-columns:1fr">
+          <div class="full">
+            <label for="eyebrow">Étiquette (ex. "École privée")</label>
+            <input id="eyebrow" name="eyebrow" type="text" placeholder="École privée">
+          </div>
+          <div class="full">
+            <label for="title">Titre</label>
+            <input id="title" name="title" type="text" placeholder="Application de gestion scolaire complète" required>
+          </div>
+          <div class="full">
+            <label for="subtitle">Sous-titre</label>
+            <input id="subtitle" name="subtitle" type="text" placeholder="Une phrase courte qui donne envie de cliquer">
+          </div>
+          <div class="full">
+            <label for="link">Lien (au clic sur "Découvrir")</label>
+            <input id="link" name="link" type="text" placeholder="/ecole, /medecin, /contact...">
+          </div>
+          <div class="full">
+            <label for="image">Image ({{ recommended_size }})</label>
+            <input id="image" name="image" type="file" accept=".png,.jpg,.jpeg,.webp">
+          </div>
+          <div class="full">
+            <button type="submit" class="btn btn-primary btn-block btn-magnetic">Ajouter au slider</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Liste des promotions existantes -->
+      <div class="reveal reveal-delay-2">
+        <h3 style="margin-bottom:18px">Promotions configurées ({{ promos|length }})</h3>
+        {% if not promos %}
+        <div class="glass" style="padding:28px; text-align:center;">
+          <p style="margin:0">Aucune promotion ajoutée pour l'instant — les 4 bannières par défaut sont affichées sur le site.</p>
+        </div>
+        {% else %}
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          {% for p in promos %}
+          <div class="glass" style="padding:18px 20px; display:flex; gap:16px; align-items:center;">
+            {% if p.image %}
+            <img src="{{ url_for('static', filename=p.image) }}" alt="" style="width:96px; height:60px; object-fit:cover; border-radius:10px; flex-shrink:0;">
+            {% else %}
+            <div style="width:96px; height:60px; border-radius:10px; flex-shrink:0; background: var(--grad-main);"></div>
+            {% endif %}
+            <div style="flex:1; min-width:0;">
+              <strong style="display:block; font-size:.92rem;">{{ p.title }}</strong>
+              <span style="font-size:.78rem; color:var(--muted-2);">{{ p.eyebrow }}{{ ' — ' if p.eyebrow and p.link }}{{ p.link }}</span>
+            </div>
+            <div style="display:flex; gap:8px; flex-shrink:0;">
+              <button type="button" class="btn btn-sm promo-toggle {{ 'btn-outline' if not p.get('active', True) else 'btn-primary' }}" data-id="{{ p.id }}" data-active="{{ 'true' if p.get('active', True) else 'false' }}">
+                {{ 'Actif' if p.get('active', True) else 'Inactif' }}
+              </button>
+              <form method="POST" action="/admin/promos/{{ p.id }}/delete" onsubmit="return confirm('Supprimer cette promotion ?');">
+                <button type="submit" class="btn btn-sm btn-outline" style="color:#F87171;">Supprimer</button>
+              </form>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('.promo-toggle').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const id = btn.dataset.id;
+    try {
+      const res = await fetch(`/admin/promos/${id}/toggle`, { method: 'POST' });
+      const data = await res.json();
+      if (data.success) {
+        btn.textContent = data.active ? 'Actif' : 'Inactif';
+        btn.classList.toggle('btn-primary', data.active);
+        btn.classList.toggle('btn-outline', !data.active);
+      }
+    } catch (err) {
+      console.error('Erreur de mise à jour de la promotion', err);
+    }
+  });
+});
+</script>
+
+{% endblock %}

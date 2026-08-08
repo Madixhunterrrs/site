@@ -68,6 +68,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.6 });
   counters.forEach(el => counterIO.observe(el));
 
+  // App screenshot slider (carousel) — supports several sliders per page
+  document.querySelectorAll('.app-slider, .promo-slider').forEach(slider => {
+    const slides = Array.from(slider.querySelectorAll('.slide'));
+    const dots = Array.from(slider.querySelectorAll('.slider-dots .dot'));
+    const prevBtn = slider.querySelector('.slider-arrow.prev');
+    const nextBtn = slider.querySelector('.slider-arrow.next');
+    if (!slides.length) return;
+    let index = 0;
+    let timer = null;
+
+    function show(i) {
+      index = (i + slides.length) % slides.length;
+      slides.forEach((s, n) => s.classList.toggle('is-active', n === index));
+      dots.forEach((d, n) => d.classList.toggle('is-active', n === index));
+    }
+    function next() { show(index + 1); }
+    function prev() { show(index - 1); }
+    function startAutoplay() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      timer = setInterval(next, 4500);
+    }
+    function stopAutoplay() { if (timer) clearInterval(timer); }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => { prev(); stopAutoplay(); startAutoplay(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { next(); stopAutoplay(); startAutoplay(); });
+    dots.forEach((d, n) => d.addEventListener('click', () => { show(n); stopAutoplay(); startAutoplay(); }));
+    slider.addEventListener('mouseenter', stopAutoplay);
+    slider.addEventListener('mouseleave', startAutoplay);
+
+    show(0);
+    startAutoplay();
+  });
+
   // FAQ accordion
   document.querySelectorAll('.faq-item').forEach(item => {
     const q = item.querySelector('.faq-q');

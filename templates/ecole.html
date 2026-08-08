@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% block title %}École privée — ScaleUp{% endblock %}
+{% block content %}
+
+<section class="page-hero" style="padding-bottom:50px">
+  <div class="container">
+    <a href="/" class="back-link"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Choisir un autre domaine</a>
+    <div class="section-head center reveal is-visible">
+      <span class="eyebrow">École privée</span>
+      <h1>La solution digitale pensée pour <span class="grad-text">votre établissement.</span></h1>
+      <p>Application de gestion scolaire, marketing digital et digitalisation — tout ce qu'il faut pour piloter votre école sans effort.</p>
+      <div class="hero-actions" style="justify-content:center; margin-top:32px">
+        <a href="#services" class="btn btn-outline">Voir les services</a>
+        <a href="/contact?service=ecole" class="btn btn-primary btn-magnetic">Demander une démo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slider des captures de l'application déjà disponibles -->
+<section class="section-tight" style="padding-top:0">
+  <div class="container">
+    <div class="app-slider tilt reveal reveal-delay-2">
+      <div class="slider-viewport">
+        <div class="slide is-active">
+          <img src="{{ url_for('static', filename='img/app-screenshot.png') }}" alt="Tableau de bord d'analyse pédagogique" loading="lazy">
+          <span class="slide-caption">Analyse pédagogique</span>
+        </div>
+        <div class="slide">
+          <img src="{{ url_for('static', filename='img/shot-transport.png') }}" alt="Carte du trajet et ordre de ramassage" loading="lazy">
+          <span class="slide-caption">Transport &amp; itinéraires</span>
+        </div>
+        <div class="slide">
+          <img src="{{ url_for('static', filename='img/shot-flotte.png') }}" alt="Suivi de flotte en temps réel" loading="lazy">
+          <span class="slide-caption">Suivi de flotte en temps réel</span>
+        </div>
+        <div class="slide">
+          <img src="{{ url_for('static', filename='img/shot-comptabilite.png') }}" alt="Analyse comptable" loading="lazy">
+          <span class="slide-caption">Analyse comptable</span>
+        </div>
+        <div class="slide">
+          <img src="{{ url_for('static', filename='img/shot-paiements.png') }}" alt="Liste des paiements" loading="lazy">
+          <span class="slide-caption">Facturation &amp; paiements</span>
+        </div>
+        <button class="slider-arrow prev" aria-label="Capture précédente">‹</button>
+        <button class="slider-arrow next" aria-label="Capture suivante">›</button>
+        <div class="slider-dots">
+          <button class="dot is-active" aria-label="Capture 1"></button>
+          <button class="dot" aria-label="Capture 2"></button>
+          <button class="dot" aria-label="Capture 3"></button>
+          <button class="dot" aria-label="Capture 4"></button>
+          <button class="dot" aria-label="Capture 5"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Nos services</span>
+      <h2>Tout ce qu'il faut pour votre école</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card glass glow-border reveal reveal-delay-1">
+        <div class="service-icon"><i class="fa-solid fa-school" aria-hidden="true"></i></div>
+        <h3>Application de Gestion d'École</h3>
+        <p>Élèves, paiements, notes, présence, transport et communication — dans une seule plateforme.</p>
+        <a href="/application" class="card-link">Découvrir l'application <span class="arrow">→</span></a>
+      </div>
+      <div class="service-card glass glow-border reveal reveal-delay-2">
+        <div class="service-icon service-icon-pink"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></div>
+        <h3>Marketing Digital</h3>
+        <p>Une présence forte et des campagnes qui font connaître votre établissement.</p>
+        <a href="/marketing" class="card-link">Voir nos services marketing <span class="arrow">→</span></a>
+      </div>
+      <div class="service-card glass glow-border reveal reveal-delay-3">
+        <div class="service-icon"><i class="fa-solid fa-gears" aria-hidden="true"></i></div>
+        <h3>Digitalisation</h3>
+        <p>Vos process administratifs automatisés, connectés et pilotés depuis le cloud.</p>
+        <a href="/digitalisation" class="card-link">Explorer la digitalisation <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="marquee reveal is-visible">
+      <div class="marquee-track">
+        {% for tag in ["Écoles primaires","Collèges & lycées","Groupes scolaires","Instituts de formation"] * 2 %}
+        <span class="marquee-item">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="app-showcase">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Pourquoi ScaleUp</span>
+      <h2>Pourquoi choisir notre plateforme ?</h2>
+      <p>Une solution moderne, sécurisée et conçue pour simplifier la gestion de votre établissement.</p>
+    </div>
+    <div class="why-grid">
+      {% set why_items = [
+        ("fa-solid fa-lock","Sécurité des données","Vos données sont protégées grâce à un chiffrement sécurisé et des accès contrôlés."),
+        ("fa-solid fa-earth-europe","Hébergement sécurisé en Europe","Centres de données européens offrant une haute disponibilité."),
+        ("fa-solid fa-comments","Communication avec les parents","Relance des paiements et notifications via WhatsApp et l'application."),
+        ("fa-solid fa-sack-dollar","Gestion des paiements","Suivi des paiements, factures, soldes et statistiques financières."),
+        ("fa-solid fa-graduation-cap","Gestion complète des élèves","Notes, absences, bulletins, dossiers et suivi pédagogique."),
+        ("fa-solid fa-rocket","Mises à jour continues","La plateforme évolue régulièrement avec de nouvelles fonctionnalités."),
+      ] %}
+      {% for icon, title, desc in why_items %}
+      <div class="why-card glass reveal reveal-delay-{{ loop.index0 % 4 + 1 }}">
+        <div class="why-icon{{ ' pink' if loop.index0 % 3 == 2 else '' }}"><i class="{{ icon }}" aria-hidden="true"></i></div>
+        <h4>{{ title }}</h4>
+        <p>{{ desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="stats-band glass glow-border reveal">
+      <div class="stat-strip">
+        <div class="stat-block"><b>+<span data-counter="10000">0</span></b><span>élèves gérés</span></div>
+        <div class="stat-block"><b><span data-counter="99.9" data-suffix="%">0%</span></b><span>Disponibilité</span></div>
+        <div class="stat-block"><b><span data-counter="24" data-suffix="/7">0/7</span></b><span>Accès sécurisé</span></div>
+        <div class="stat-block"><b><span data-counter="100" data-suffix="%">0%</span></b><span>Cloud</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Notre méthode</span>
+      <h2>Comment nous travaillons</h2>
+    </div>
+    <div class="timeline">
+      {% set steps = [
+        ("01","Audit","Analyse de vos besoins, de vos outils actuels et de vos objectifs."),
+        ("02","Proposition","Une solution sur mesure, chiffrée et priorisée avec vous."),
+        ("03","Développement","Conception et développement de votre application ou de vos campagnes."),
+        ("04","Déploiement","Mise en ligne, formation des équipes et tests en conditions réelles."),
+        ("05","Accompagnement","Support continu, évolutions et optimisation dans la durée."),
+      ] %}
+      {% for num, title, desc in steps %}
+      <div class="tl-item reveal">
+        <div class="tl-num">{{ num }}</div>
+        <div class="tl-content">
+          <h4>{{ title }}</h4>
+          <p>{{ desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-neon reveal">
+      <span class="eyebrow" style="justify-content:center">Prêt à passer à l'étape suivante</span>
+      <h2>Prêt à digitaliser votre établissement&nbsp;?</h2>
+      <p>Réservez un échange de 30 minutes avec notre équipe pour découvrir l'application en conditions réelles.</p>
+      <a href="/contact?service=ecole" class="btn btn-primary btn-magnetic">Réserver une démonstration</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

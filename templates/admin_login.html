@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Connexion — Panneau de contrôle ScaleUp{% endblock %}
+{% block content %}
+
+<section class="page-hero" style="padding-bottom:60px; min-height:70vh; display:flex; align-items:center;">
+  <div class="container" style="max-width:440px">
+    <div class="section-head center reveal is-visible">
+      <span class="eyebrow">Espace privé</span>
+      <h1 style="font-size:1.8rem">Panneau de contrôle</h1>
+      <p>Connectez-vous pour consulter les demandes de démo et les messages reçus.</p>
+    </div>
+
+    <form method="POST" class="demo-form glass glow-border reveal is-visible" style="padding:32px; grid-template-columns:1fr">
+      {% if error %}
+      <p class="full" style="color:#F87171; font-size:.88rem; margin:0 0 4px;">{{ error }}</p>
+      {% endif %}
+      <div class="full">
+        <label for="password">Mot de passe</label>
+        <input id="password" name="password" type="password" placeholder="••••••••" required autofocus>
+      </div>
+      <div class="full">
+        <button type="submit" class="btn btn-primary btn-block btn-magnetic">Se connecter</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+{% endblock %}

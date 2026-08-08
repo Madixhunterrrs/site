@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}ScaleUp — Strategy & Growth Agency{% endblock %}
+{% block content %}
+
+<!-- ============================================================
+     Page d'accueil courte : le visiteur choisit son domaine.
+     Le contenu détaillé (services, avantages, process, etc.)
+     vit désormais sur /ecole et /medecin pour rester concis.
+============================================================ -->
+
+<!-- Slider promotionnel : défile automatiquement, géré depuis /admin/promos -->
+<section class="section-tight" style="padding-top:150px; padding-bottom:0">
+  <div class="container">
+    <div class="promo-slider reveal is-visible">
+      <div class="slider-viewport">
+        {% for slide in promo_slides %}
+        <div class="slide{{ ' is-active' if loop.first }}{{ '' if slide.image else ' no-image' }}">
+          {% if slide.image %}<img src="{{ url_for('static', filename=slide.image) }}" alt="{{ slide.title }}">{% endif %}
+          <div class="slide-overlay">
+            {% if slide.eyebrow %}<span class="slide-eyebrow">{{ slide.eyebrow }}</span>{% endif %}
+            <h2 class="slide-title">{{ slide.title }}</h2>
+            {% if slide.subtitle %}<p class="slide-subtitle">{{ slide.subtitle }}</p>{% endif %}
+            {% if slide.link %}<a href="{{ slide.link }}" class="btn btn-primary btn-sm btn-magnetic slide-cta">Découvrir →</a>{% endif %}
+          </div>
+        </div>
+        {% endfor %}
+        <button class="slider-arrow prev" aria-label="Précédent">‹</button>
+        <button class="slider-arrow next" aria-label="Suivant">›</button>
+        <div class="slider-dots">
+          {% for slide in promo_slides %}<button class="dot{{ ' is-active' if loop.first }}" aria-label="Diapo {{ loop.index }}"></button>{% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="domain-hero" style="padding-top:60px">
+  <div class="container">
+    <div class="section-head center reveal is-visible">
+      <span class="eyebrow">Bienvenue chez ScaleUp</span>
+      <h1>Quel est votre domaine&nbsp;?</h1>
+      <p>Nous concevons des solutions digitales sur mesure pour deux univers que nous connaissons bien. Choisissez le vôtre pour découvrir nos services.</p>
+    </div>
+
+    <div class="domain-grid">
+      <a href="/ecole" class="domain-card glass glow-border reveal reveal-delay-1">
+        <div class="domain-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+        <h2>École privée</h2>
+        <p>Application de gestion scolaire complète, marketing digital et digitalisation pour votre établissement.</p>
+        <span class="domain-link">Découvrir <span class="arrow">→</span></span>
+      </a>
+
+      <a href="/medecin" class="domain-card domain-card-pink glass glow-border reveal reveal-delay-2">
+        <div class="domain-icon pink"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></div>
+        <h2>Cabinets médicaux</h2>
+        <p>Marketing digital et digitalisation pour développer votre patientèle et simplifier la gestion de votre cabinet.</p>
+        <span class="domain-link">Découvrir <span class="arrow">→</span></span>
+      </a>
+    </div>
+
+    <p class="domain-footnote reveal">Pas encore sûr ? <a href="/contact">Parlez-nous de votre projet</a>, on vous oriente.</p>
+  </div>
+</section>
+
+{% endblock %}
