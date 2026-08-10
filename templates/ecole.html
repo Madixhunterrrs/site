@@ -2,16 +2,21 @@
 {% block title %}École privée — ScaleUp{% endblock %}
 {% block content %}
 
-<section class="page-hero" style="padding-bottom:50px">
+<section class="page-hero ecole-hero" style="padding-bottom:30px">
   <div class="container">
     <a href="/" class="back-link"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Choisir un autre domaine</a>
-    <div class="section-head center reveal is-visible">
-      <span class="eyebrow">École privée</span>
-      <h1>La solution digitale pensée pour <span class="grad-text">votre établissement.</span></h1>
-      <p>Application de gestion scolaire, marketing digital et digitalisation — tout ce qu'il faut pour piloter votre école sans effort.</p>
-      <div class="hero-actions" style="justify-content:center; margin-top:32px">
-        <a href="#services" class="btn btn-outline">Voir les services</a>
-        <a href="/contact?service=ecole" class="btn btn-primary btn-magnetic">Demander une démo</a>
+    <div class="hero-grid ecole-hero-grid">
+      <div class="section-head reveal is-visible" style="margin:0">
+        <span class="eyebrow">École privée</span>
+        <h1>La solution digitale pensée pour <span class="grad-text">votre établissement.</span></h1>
+        <p>Application de gestion scolaire, marketing digital et digitalisation — tout ce qu'il faut pour piloter votre école sans effort.</p>
+        <div class="hero-actions" style="margin-top:32px">
+          <a href="#services" class="btn btn-outline">Voir les services</a>
+          <a href="/contact?service=ecole" class="btn btn-primary btn-magnetic">Demander une démo</a>
+        </div>
+      </div>
+      <div class="ecole-illustration reveal reveal-delay-2 is-visible">
+        <img src="{{ url_for('static', filename='img/students-illustration.svg') }}" alt="Illustration artistique de deux élèves et une enseignante" loading="lazy">
       </div>
     </div>
   </div>

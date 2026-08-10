@@ -36,6 +36,18 @@ python app.py
 
 Puis ouvrez **http://127.0.0.1:5000** dans votre navigateur.
 
+## Déployer sur Render
+
+1. **Build command** : `pip install -r requirements.txt`
+2. **Start command** : `gunicorn app:app --bind 0.0.0.0:$PORT`
+   (`python app.py` ne doit jamais être utilisé en production — c'est un serveur de développement, pas fait pour ça.)
+3. Définissez les variables d'environnement dans l'onglet **Environment** de Render : `SECRET_KEY`, `ADMIN_PASSWORD`, et si besoin `SMTP_HOST` / `SMTP_USER` / `SMTP_PASSWORD` / `CONTACT_TO`.
+4. Après chaque mise à jour du code, redéployez (`Manual Deploy → Deploy latest commit`, ou un `git push` si Render est connecté à votre repo). Si une erreur `TemplateNotFound` apparaît après une mise à jour, c'est presque toujours le signe qu'une **ancienne version du code est encore déployée** — vérifiez que tous les fichiers de `templates/` sont bien présents dans le dépôt et redéployez.
+
+**⚠️ Stockage important :** sur Render (plan gratuit/standard), le disque est **éphémère** — tout fichier créé après le déploiement (donc `data/demandes.json`, `data/promos.json` et les images uploadées dans `static/img/promos/`) est **perdu à chaque redéploiement ou redémarrage**. Deux solutions :
+- Configurez l'envoi d'email (SMTP, voir plus bas) pour ne jamais dépendre uniquement du fichier local — c'est la solution recommandée et gratuite.
+- Ou ajoutez un **Persistent Disk** Render (payant) monté sur le dossier `data/` (et `static/img/promos/` si vous utilisez le slider de promotions) pour que ces fichiers survivent aux redéploiements.
+
 ## Parcours du site
 
 - `/` — accueil court : le visiteur choisit son domaine

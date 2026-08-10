@@ -192,10 +192,11 @@ section{ padding: 140px 0; position: relative; }
 .domain-hero{ padding-top: 200px; padding-bottom: 140px; min-height: 78vh; display:flex; align-items:center; }
 .domain-hero .section-head{ margin-bottom: 56px; }
 .domain-hero h1{ font-size: clamp(2.2rem, 4.4vw, 3.4rem); }
-.domain-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 26px; max-width: 920px; margin: 0 auto; }
+.domain-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 26px; max-width: 920px; margin: 0 auto; perspective: 1600px; }
 .domain-card{
   display:block; padding: 44px 38px; text-align:left; position:relative; overflow:hidden;
-  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease), opacity .5s var(--ease);
+  transform-style: preserve-3d; backface-visibility: hidden; will-change: transform;
 }
 .domain-card:hover{ transform: translateY(-8px); box-shadow: 0 26px 60px -24px rgba(37,99,235,.4); }
 .domain-card-pink:hover{ box-shadow: 0 26px 60px -24px rgba(255,47,209,.4); }
@@ -212,6 +213,19 @@ section{ padding: 140px 0; position: relative; }
 .domain-footnote{ text-align:center; margin: 40px 0 0; font-size:.9rem; }
 .domain-footnote a{ color: var(--accent); font-weight:600; }
 @media (max-width: 760px){ .domain-grid{ grid-template-columns: 1fr; } .domain-hero{ padding-top:150px; } }
+
+/* Transition 3D "page qui se tourne" au clic sur un domaine (voir main.js) */
+.domain-card.is-flipping{
+  transform: rotateY(-110deg) scale(.92); opacity: 0;
+  transition: transform .6s cubic-bezier(.5,0,.5,1), opacity .6s ease;
+}
+body.page-leaving .domain-card:not(.is-flipping),
+body.page-leaving .domain-hero .section-head,
+body.page-leaving .promo-slider,
+body.page-leaving .domain-footnote{
+  opacity: 0; transform: scale(.97); transition: opacity .45s ease, transform .45s ease;
+}
+
 .hero-grid{ display:grid; grid-template-columns: 1.05fr 1fr; gap: 60px; align-items:center; }
 .hero-copy h1{ font-size: clamp(2.4rem, 4.6vw, 3.85rem); }
 .hero-copy .lede{ font-size: 1.13rem; max-width: 480px; color: var(--muted); }
@@ -457,6 +471,23 @@ section{ padding: 140px 0; position: relative; }
 }
 
 /* ===================================================================
+   Documentation card — présentation téléchargeable (page Application)
+=================================================================== */
+.doc-card{
+  display:grid; grid-template-columns: 320px 1fr; overflow:hidden; align-items:stretch;
+}
+.doc-card-cover{ position:relative; min-height: 220px; }
+.doc-card-cover img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+.doc-card-body{ padding: 34px 38px; display:flex; flex-direction:column; justify-content:center; }
+.doc-card-body h3{ font-size:1.3rem; margin-bottom:10px; }
+.doc-card-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top: 22px; }
+@media (max-width: 760px){
+  .doc-card{ grid-template-columns: 1fr; }
+  .doc-card-cover{ min-height: 180px; }
+  .doc-card-body{ padding: 28px 26px; }
+}
+
+/* ===================================================================
    Promo slider — bannière défilante des services (page d'accueil)
 =================================================================== */
 .promo-slider{
@@ -508,6 +539,24 @@ section{ padding: 140px 0; position: relative; }
    Generic page hero (sub-pages)
 =================================================================== */
 .page-hero{ padding-top: 180px; padding-bottom: 80px; text-align:center; }
+
+/* École — hero à deux colonnes avec illustration artistique */
+.ecole-hero{ text-align:left; }
+.ecole-hero-grid{ margin-top: 36px; }
+.ecole-illustration{ display:flex; align-items:center; justify-content:center; perspective: 1000px; }
+.ecole-illustration img{
+  width:100%; max-width: 460px; height:auto; filter: drop-shadow(0 20px 46px rgba(37,99,235,.25));
+  animation: illustrationEnter .9s cubic-bezier(.16,.84,.44,1) .15s both;
+}
+@keyframes illustrationEnter{
+  from{ opacity:0; transform: rotateY(35deg) scale(.85) translateY(18px); }
+  to{ opacity:1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce){ .ecole-illustration img{ animation:none; } }
+@media (max-width: 980px){
+  .ecole-illustration{ margin-top: 20px; }
+  .ecole-illustration img{ max-width: 340px; }
+}
 .page-hero .section-head{ margin: 0 auto; }
 .page-hero h1{ font-size: clamp(2.1rem, 4vw, 3.2rem); }
 .back-link{

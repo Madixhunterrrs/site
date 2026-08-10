@@ -1,0 +1,142 @@
+<svg width="640" height="520" viewBox="0 0 640 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration artistique de deux élèves et une enseignante, style dessin animé">
+  <defs>
+    <linearGradient id="gradPink" x1="112" y1="268" x2="228" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF2FD1"/><stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="gradBlue" x1="266" y1="246" x2="394" y2="452" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB"/><stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="gradCyan" x1="426" y1="264" x2="554" y2="444" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06B6D4"/><stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.35"/><stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.28"/><stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- lueur d'ambiance -->
+  <ellipse cx="230" cy="220" rx="220" ry="190" fill="url(#glow1)"/>
+  <ellipse cx="470" cy="260" rx="200" ry="180" fill="url(#glow2)"/>
+  <!-- ombre au sol -->
+  <ellipse cx="330" cy="478" rx="260" ry="16" fill="#000000" opacity="0.28"/>
+
+  <!-- étoiles / éclats décoratifs -->
+  <g opacity="0.9">
+    <path d="M96 86 L102 102 L118 108 L102 114 L96 130 L90 114 L74 108 L90 102 Z" fill="#06B6D4"/>
+    <path d="M566 120 L571 133 L584 138 L571 143 L566 156 L561 143 L548 138 L561 133 Z" fill="#FF2FD1"/>
+    <circle cx="230" cy="60" r="5" fill="#FBBF24"/>
+    <circle cx="500" cy="66" r="4" fill="#7C3AED"/>
+    <circle cx="120" cy="170" r="3.5" fill="#FBBF24"/>
+  </g>
+
+  <!-- pomme flottante (symbole classique de l'école) -->
+  <g transform="translate(560 260)">
+    <path d="M0 14 C-14 14 -22 26 -22 40 C-22 56 -10 68 0 68 C10 68 22 56 22 40 C22 26 14 14 0 14 Z" fill="#FF6B6B"/>
+    <path d="M0 14 C-2 6 -2 0 2 -6" stroke="#7A4A2B" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M2 -2 C10 -10 20 -8 22 -2 C14 2 6 2 2 -2 Z" fill="#34D399"/>
+  </g>
+
+  <!-- crayon flottant -->
+  <g transform="translate(30 300) rotate(28)">
+    <rect x="0" y="0" width="16" height="70" rx="6" fill="#FBBF24"/>
+    <path d="M0 0 L16 0 L8 -20 Z" fill="#F5A623"/>
+    <rect x="0" y="62" width="16" height="10" rx="2" fill="#7C3AED"/>
+  </g>
+
+  <!-- livre flottant -->
+  <g transform="translate(66 150) rotate(-8)">
+    <path d="M0 6 C14 -2 28 -2 40 6 C52 -2 66 -2 80 6 L80 34 C66 26 52 26 40 34 C28 26 14 26 0 34 Z" fill="#F5F7FF" opacity="0.95"/>
+    <path d="M40 6 L40 34" stroke="#7C3AED" stroke-width="2"/>
+  </g>
+
+  <!-- ============ Élève 1 : couettes, tient un livre ============ -->
+  <g>
+    <!-- corps -->
+    <path d="M136,300 C122,310 108,352 100,440 L240,440 C232,352 218,310 204,300 C196,314 144,314 136,300 Z" fill="url(#gradPink)"/>
+    <path d="M150,368 C162,360 178,360 190,368 L190,392 C178,384 162,384 150,392 Z" fill="#F5F7FF" opacity="0.9"/>
+    <!-- couettes -->
+    <ellipse cx="120" cy="248" rx="15" ry="22" fill="#7C3AED"/>
+    <ellipse cx="220" cy="248" rx="15" ry="22" fill="#7C3AED"/>
+    <circle cx="120" cy="230" r="6" fill="#FF2FD1"/>
+    <circle cx="220" cy="230" r="6" fill="#FF2FD1"/>
+    <!-- tête -->
+    <circle cx="170" cy="248" r="34" fill="#F7C9A0"/>
+    <!-- frange -->
+    <path d="M138,232 Q170,206 202,232 L202,246 Q170,222 138,246 Z" fill="#7C3AED"/>
+    <!-- joues -->
+    <circle cx="150" cy="258" r="7" fill="#FF9EC4" opacity="0.55"/>
+    <circle cx="190" cy="258" r="7" fill="#FF9EC4" opacity="0.55"/>
+    <!-- yeux -->
+    <circle cx="158" cy="248" r="4" fill="#1F2937"/>
+    <circle cx="182" cy="248" r="4" fill="#1F2937"/>
+    <circle cx="159.4" cy="246.4" r="1.3" fill="#fff"/>
+    <circle cx="183.4" cy="246.4" r="1.3" fill="#fff"/>
+    <!-- sourire -->
+    <path d="M156,262 Q170,272 184,262" stroke="#7A4A2B" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- ============ Élève 2 : chapeau de diplômé, au centre ============ -->
+  <g>
+    <!-- corps -->
+    <path d="M292,266 C276,278 260,326 250,452 L410,452 C400,326 384,278 368,266 C358,282 302,282 292,266 Z" fill="url(#gradBlue)"/>
+    <!-- nœud papillon -->
+    <path d="M318,268 L330,278 L318,288 Z M342,268 L330,278 L342,288 Z" fill="#FBBF24"/>
+    <circle cx="330" cy="278" r="4" fill="#F5A623"/>
+    <!-- tête -->
+    <circle cx="330" cy="222" r="38" fill="#F7C9A0"/>
+    <!-- frange courte -->
+    <path d="M294,204 Q330,182 366,204 L366,214 Q330,196 294,214 Z" fill="#1E3A8A"/>
+    <!-- joues -->
+    <circle cx="308" cy="232" r="7" fill="#FF9EC4" opacity="0.5"/>
+    <circle cx="352" cy="232" r="7" fill="#FF9EC4" opacity="0.5"/>
+    <!-- yeux -->
+    <circle cx="316" cy="222" r="4.2" fill="#1F2937"/>
+    <circle cx="344" cy="222" r="4.2" fill="#1F2937"/>
+    <circle cx="317.4" cy="220.4" r="1.4" fill="#fff"/>
+    <circle cx="345.4" cy="220.4" r="1.4" fill="#fff"/>
+    <!-- sourire large -->
+    <path d="M312,238 Q330,252 348,238" stroke="#7A4A2B" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <!-- toque de diplômé -->
+    <g>
+      <ellipse cx="330" cy="196" rx="30" ry="9" fill="#0B1120"/>
+      <path d="M282,196 L330,174 L378,196 L330,214 Z" fill="#111827"/>
+      <circle cx="330" cy="196" r="5" fill="#FBBF24"/>
+      <path d="M330,196 C334,214 340,220 336,236" stroke="#FBBF24" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <circle cx="336" cy="238" r="4" fill="#FBBF24"/>
+    </g>
+  </g>
+
+  <!-- ============ Enseignante : lunettes, blazer ============ -->
+  <g>
+    <!-- corps / blazer -->
+    <path d="M448,284 C432,296 416,336 406,444 L562,444 C554,336 538,296 522,284 C512,300 458,300 448,284 Z" fill="url(#gradCyan)"/>
+    <!-- col chemisier -->
+    <path d="M470,284 L484,304 L498,284 Z" fill="#F5F7FF" opacity="0.9"/>
+    <!-- petit livre tenu -->
+    <g transform="translate(548 372) rotate(6)">
+      <rect x="0" y="0" width="30" height="22" rx="2" fill="#F5F7FF" opacity="0.95"/>
+      <line x1="15" y1="0" x2="15" y2="22" stroke="#0891B2" stroke-width="2"/>
+    </g>
+    <!-- cheveux (chignon) -->
+    <circle cx="514" cy="230" r="9" fill="#0E7490"/>
+    <!-- tête -->
+    <circle cx="484" cy="240" r="36" fill="#F0B283"/>
+    <!-- cheveux coiffés -->
+    <path d="M448,224 Q484,198 520,224 L520,236 Q484,216 448,236 Z" fill="#0E7490"/>
+    <!-- joues -->
+    <circle cx="464" cy="250" r="6.5" fill="#FF9EC4" opacity="0.45"/>
+    <circle cx="504" cy="250" r="6.5" fill="#FF9EC4" opacity="0.45"/>
+    <!-- lunettes -->
+    <circle cx="470" cy="240" r="11" fill="none" stroke="#1F2937" stroke-width="2.4"/>
+    <circle cx="498" cy="240" r="11" fill="none" stroke="#1F2937" stroke-width="2.4"/>
+    <line x1="481" y1="240" x2="487" y2="240" stroke="#1F2937" stroke-width="2.4"/>
+    <!-- yeux -->
+    <circle cx="470" cy="240" r="3.2" fill="#1F2937"/>
+    <circle cx="498" cy="240" r="3.2" fill="#1F2937"/>
+    <!-- sourire doux -->
+    <path d="M466,258 Q484,268 502,258" stroke="#7A4A2B" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

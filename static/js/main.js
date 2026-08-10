@@ -173,6 +173,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Transition 3D "page qui se tourne" au clic sur une carte de domaine
+  const domainCards = document.querySelectorAll('.domain-card');
+  if (domainCards.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    domainCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        // laisse le comportement natif pour ouverture dans un nouvel onglet / clic molette
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+        e.preventDefault();
+        const href = card.getAttribute('href');
+        card.classList.add('is-flipping');
+        document.body.classList.add('page-leaving');
+        setTimeout(() => { window.location.href = href; }, 560);
+      });
+    });
+  }
+
   // Pro micro-interactions: 3D tilt on mockups/screenshots, magnetic buttons
   const supportsFinePointer = window.matchMedia('(pointer: fine)').matches;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
