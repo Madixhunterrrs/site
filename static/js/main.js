@@ -173,6 +173,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Illustration École : les yeux et les mains des 3 personnages suivent la souris sur la page
+  const illoSvg = document.querySelector('.illustration-svg');
+  if (illoSvg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const eyePupils = illoSvg.querySelectorAll('.eye-pupil');
+    const handsGroups = illoSvg.querySelectorAll('.hands-follow');
+    const EYE_MAX = 2.6;   // déplacement max de la pupille (unités SVG)
+    const ARM_MAX_DEG = 9; // rotation max des bras vers la souris (degrés)
+    let rafId = null;
+
+    const trackPointer = (clientX, clientY) => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        const ctm = illoSvg.getScreenCTM();
+        if (!ctm) return;
+        const pt = illoSvg.createSVGPoint();
+        pt.x = clientX; pt.y = clientY;
+        const p = pt.matrixTransform(ctm.inverse());
+
+        eyePupils.forEach(g => {
+          const cx = parseFloat(g.dataset.cx), cy = parseFloat(g.dataset.cy);
+          const dx = p.x - cx, dy = p.y - cy;
+          const dist = Math.hypot(dx, dy) || 1;
+          const r = Math.min(EYE_MAX, dist / 14);
+          g.setAttribute('transform', `translate(${((dx / dist) * r).toFixed(2)} ${((dy / dist) * r).toFixed(2)})`);
+        });
+
+        handsGroups.forEach(g => {
+          const px = parseFloat(g.dataset.pivotX), py = parseFloat(g.dataset.pivotY);
+          const lean = Math.max(-1, Math.min(1, (p.x - px) / 260));
+          g.setAttribute('transform', `rotate(${(lean * ARM_MAX_DEG).toFixed(2)} ${px} ${py})`);
+        });
+      });
+    };
+
+    document.addEventListener('mousemove', (e) => trackPointer(e.clientX, e.clientY), { passive: true });
+  }
+
   // Transition 3D "page qui se tourne" au clic sur une carte de domaine
   const domainCards = document.querySelectorAll('.domain-card');
   if (domainCards.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
