@@ -15,8 +15,8 @@
           <a href="/contact?service=ecole" class="btn btn-primary btn-magnetic">Demander une démo</a>
         </div>
       </div>
-      <div class="ecole-illustration reveal reveal-delay-2 is-visible">
-        <img src="{{ url_for('static', filename='img/students-illustration.svg') }}" alt="Illustration artistique de deux élèves et une enseignante" loading="lazy">
+      <div class="ecole-illustration tilt reveal reveal-delay-2 is-visible">
+        {% include "_students_illustration.html" %}
       </div>
     </div>
   </div>
@@ -85,6 +85,35 @@
         <h3>Digitalisation</h3>
         <p>Vos process administratifs automatisés, connectés et pilotés depuis le cloud.</p>
         <a href="/digitalisation" class="card-link">Explorer la digitalisation <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="bundle-offer glass glow-border reveal">
+      <div class="bundle-badge"><i class="fa-solid fa-star" aria-hidden="true"></i> Offre exclusive</div>
+      <div class="bundle-grid">
+        <div class="bundle-copy">
+          <h2>L'offre Tout-en-1</h2>
+          <p>Application de gestion scolaire, digitalisation et marketing digital réunis dans une seule offre — pour lancer votre transformation digitale sans multiplier les prestataires.</p>
+          <ul class="check-list">
+            <li><span class="ico">✓</span> Application de gestion d'école complète</li>
+            <li><span class="ico">✓</span> Digitalisation de vos process administratifs</li>
+            <li><span class="ico">✓</span> Marketing digital (réseaux sociaux, Ads)</li>
+            <li><span class="ico">✓</span> Accompagnement dédié tout au long du projet</li>
+          </ul>
+        </div>
+        <div class="bundle-price">
+          <div class="bundle-price-main">
+            <span class="bundle-amount">3 000 DH</span>
+            <span class="bundle-period">/mois</span>
+          </div>
+          <span class="bundle-note">les 3 premiers mois</span>
+          <div class="bundle-price-after">puis <strong>3 500 DH/mois</strong> à partir du 4<sup>e</sup> mois</div>
+          <a href="/contact?service=ecole" class="btn btn-primary btn-block btn-magnetic">Profiter de l'offre</a>
+        </div>
       </div>
     </div>
   </div>
