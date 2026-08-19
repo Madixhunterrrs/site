@@ -1,15 +1,17 @@
 {% extends "base.html" %}
-{% block title %}Application de Gestion d'École — ScaleUp{% endblock %}
+{% block title %}Khotwa — Application de Gestion d'École — ScaleUp{% endblock %}
 {% block content %}
 
 <section class="page-hero">
   <div class="container">
     <div class="section-head center reveal is-visible">
+      <img src="{{ url_for('static', filename='img/khotwa-wordmark.png') }}" alt="Khotwa — application de gestion scolaire" class="khotwa-logo tilt">
       <span class="eyebrow">Notre produit phare</span>
       <h1>L'application qui pilote <span class="grad-text">toute la vie scolaire.</span></h1>
       <p>Élèves, enseignants, parents, paiements, transport, examens : une seule plateforme, pensée pour les écoles qui veulent gagner du temps sans perdre le contrôle.</p>
       <div class="hero-actions" style="justify-content:center; margin-top:32px">
-        <a href="/contact" class="btn btn-primary btn-magnetic">Essayer gratuitement</a>
+        <a href="/demo" class="btn btn-primary btn-magnetic">Essayer la démo</a>
+        <a href="/contact" class="btn btn-outline">Demander un accès</a>
         <a href="#tarifs" class="btn btn-outline">Voir les tarifs</a>
       </div>
     </div>

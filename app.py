@@ -137,7 +137,7 @@ def default_promos():
     return [
         {
             "eyebrow": "École privée",
-            "title": "Application de gestion scolaire complète",
+            "title": "Khotwa — Application de gestion scolaire complète",
             "subtitle": "Élèves, paiements, présence, transport : tout piloté depuis une seule plateforme.",
             "link": "/ecole",
             "image": "img/app-screenshot.png",
@@ -209,6 +209,11 @@ def marketing():
 @app.route("/digitalisation")
 def digitalisation():
     return render_template("digitalisation.html", active="")
+
+
+@app.route("/demo")
+def demo():
+    return render_template("demo.html", active="")
 
 
 @app.route("/contact")

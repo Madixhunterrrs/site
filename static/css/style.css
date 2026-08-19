@@ -621,6 +621,70 @@ body.page-leaving .domain-footnote{
    Generic page hero (sub-pages)
 =================================================================== */
 .page-hero{ padding-top: 180px; padding-bottom: 80px; text-align:center; }
+.khotwa-logo{
+  display:block; margin: 0 auto 22px; max-width: 220px; height:auto;
+  filter: drop-shadow(0 16px 34px rgba(251,191,36,.22));
+  animation: khotwaFloat 5s ease-in-out infinite;
+}
+@keyframes khotwaFloat{
+  0%, 100%{ transform: translateY(0) rotate(0deg); }
+  50%{ transform: translateY(-10px) rotate(-1.5deg); }
+}
+@media (prefers-reduced-motion: reduce){ .khotwa-logo{ animation:none; } }
+.khotwa-badge{
+  display:inline-flex; align-items:center; gap:10px; padding: 10px 18px 10px 10px; border-radius:999px;
+  background: var(--glass); border:1px solid var(--glass-border); backdrop-filter: blur(10px);
+}
+.khotwa-badge img{ width:30px; height:30px; object-fit:contain; }
+.khotwa-badge span{ font-size:.82rem; font-weight:600; color: var(--text); }
+
+/* ===================================================================
+   Démo interactive Khotwa — sidebar + panneaux (page /demo)
+=================================================================== */
+.demo-shell{
+  display:grid; grid-template-columns: 240px 1fr; min-height: 560px; overflow:hidden;
+}
+.demo-sidebar{
+  background: rgba(255,255,255,0.03); border-right:1px solid var(--line);
+  padding: 22px 14px; display:flex; flex-direction:column; gap: 6px;
+}
+.demo-sidebar-brand{
+  display:flex; align-items:center; gap:10px; padding: 6px 10px 18px; margin-bottom:6px;
+  border-bottom:1px solid var(--line);
+}
+.demo-sidebar-brand img{ width:30px; height:30px; object-fit:contain; }
+.demo-sidebar-brand span{ font-family: var(--font-display); font-weight:700; }
+.demo-nav-item{
+  display:flex; align-items:center; gap:11px; width:100%; padding: 12px 14px; border-radius: 10px;
+  background:none; border:none; color: var(--muted); text-align:left; font-size:.87rem; font-family:inherit;
+  cursor:pointer; transition: background .25s, color .25s;
+}
+.demo-nav-item i{ width:16px; text-align:center; color: var(--accent); }
+.demo-nav-item:hover{ background: rgba(255,255,255,0.05); color: var(--text); }
+.demo-nav-item.is-active{ background: var(--grad-main); color:#fff; }
+.demo-nav-item.is-active i{ color:#fff; }
+.demo-sidebar-cta{ margin-top: 14px; text-align:center; justify-content:center; }
+.demo-main{ padding: 28px; }
+.demo-panel{ display:none; }
+.demo-panel.is-active{ display:block; animation: demoPanelIn .4s ease both; }
+@keyframes demoPanelIn{ from{ opacity:0; transform: translateY(8px); } to{ opacity:1; transform:none; } }
+.demo-caption{
+  display:flex; gap:10px; align-items:flex-start; margin: 0 0 18px; padding: 14px 18px; border-radius: 12px;
+  background: rgba(37,99,235,0.08); border:1px solid rgba(37,99,235,0.25); font-size:.87rem; color: var(--text);
+}
+.demo-caption i{ color: var(--accent); margin-top:2px; flex-shrink:0; }
+.demo-panel img{ width:100%; height:auto; border-radius: 12px; border:1px solid var(--glass-border); display:block; }
+@media (max-width: 860px){
+  .demo-shell{ grid-template-columns: 1fr; }
+  .demo-sidebar{
+    flex-direction:row; overflow-x:auto; border-right:none; border-bottom:1px solid var(--line);
+    padding: 14px; gap:8px;
+  }
+  .demo-sidebar-brand{ display:none; }
+  .demo-nav-item{ flex-shrink:0; width:auto; white-space:nowrap; }
+  .demo-sidebar-cta{ display:none; }
+  .demo-main{ padding: 20px; }
+}
 
 /* École — hero à deux colonnes avec illustration artistique */
 .ecole-hero{ text-align:left; }

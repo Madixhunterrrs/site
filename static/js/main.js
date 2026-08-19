@@ -101,6 +101,20 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoplay();
   });
 
+  // Démo interactive Khotwa : navigation entre les panneaux
+  const demoNavItems = document.querySelectorAll('.demo-nav-item');
+  if (demoNavItems.length) {
+    demoNavItems.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.target;
+        demoNavItems.forEach(b => b.classList.toggle('is-active', b === btn));
+        document.querySelectorAll('.demo-panel').forEach(panel => {
+          panel.classList.toggle('is-active', panel.id === `panel-${target}`);
+        });
+      });
+    });
+  }
+
   // FAQ accordion
   document.querySelectorAll('.faq-item').forEach(item => {
     const q = item.querySelector('.faq-q');

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Démo — Khotwa — ScaleUp{% endblock %}
+{% block content %}
+
+<section class="page-hero" style="padding-bottom:24px">
+  <div class="container">
+    <div class="section-head center reveal is-visible">
+      <img src="{{ url_for('static', filename='img/khotwa-emblem.png') }}" alt="Khotwa" class="khotwa-logo tilt" style="max-width:110px">
+      <span class="eyebrow">Démo interactive</span>
+      <h1>Naviguez dans <span class="grad-text">Khotwa</span>, en vrai.</h1>
+      <p>Cliquez sur les modules à gauche pour découvrir de vrais écrans de l'application — comme si vous étiez déjà administrateur.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:10px">
+  <div class="container">
+    <div class="demo-shell glass glow-border reveal is-visible">
+      <nav class="demo-sidebar" aria-label="Modules de la démo">
+        <div class="demo-sidebar-brand">
+          <img src="{{ url_for('static', filename='img/khotwa-emblem.png') }}" alt="">
+          <span>Khotwa</span>
+        </div>
+        <button type="button" class="demo-nav-item is-active" data-target="dashboard">
+          <i class="fa-solid fa-chart-line" aria-hidden="true"></i> Analyse pédagogique
+        </button>
+        <button type="button" class="demo-nav-item" data-target="paiements">
+          <i class="fa-solid fa-credit-card" aria-hidden="true"></i> Paiements
+        </button>
+        <button type="button" class="demo-nav-item" data-target="compta">
+          <i class="fa-solid fa-chart-pie" aria-hidden="true"></i> Comptabilité
+        </button>
+        <button type="button" class="demo-nav-item" data-target="transport">
+          <i class="fa-solid fa-route" aria-hidden="true"></i> Transport
+        </button>
+        <button type="button" class="demo-nav-item" data-target="flotte">
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Suivi de flotte
+        </button>
+        <a href="/contact?service=ecole" class="btn btn-primary btn-sm btn-magnetic demo-sidebar-cta">Demander un accès</a>
+      </nav>
+
+      <div class="demo-main">
+        <div class="demo-panel is-active" id="panel-dashboard">
+          <p class="demo-caption"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Le robot d'analyse de Khotwa résume la santé pédagogique de l'école : score global, points forts, points faibles et priorités — généré automatiquement.</p>
+          <img src="{{ url_for('static', filename='img/app-screenshot.png') }}" alt="Analyse pédagogique Khotwa" loading="lazy">
+        </div>
+        <div class="demo-panel" id="panel-paiements">
+          <p class="demo-caption"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Chaque paiement est suivi élève par élève : montant total, payé, solde restant et statut — avec reçu généré automatiquement.</p>
+          <img src="{{ url_for('static', filename='img/shot-paiements.png') }}" alt="Paiements Khotwa" loading="lazy">
+        </div>
+        <div class="demo-panel" id="panel-compta">
+          <p class="demo-caption"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> La charge élève (revenus attendus) et la charge école (dépenses) sont comparées automatiquement, avec taux d'encaissement et de règlement en temps réel.</p>
+          <img src="{{ url_for('static', filename='img/shot-comptabilite.png') }}" alt="Comptabilité Khotwa" loading="lazy">
+        </div>
+        <div class="demo-panel" id="panel-transport">
+          <p class="demo-caption"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> L'itinéraire de ramassage est calculé automatiquement, élève le plus éloigné en premier, avec la carte du trajet en direct.</p>
+          <img src="{{ url_for('static', filename='img/shot-transport.png') }}" alt="Transport Khotwa" loading="lazy">
+        </div>
+        <div class="demo-panel" id="panel-flotte">
+          <p class="demo-caption"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Chaque bus et chauffeur est suivi en direct : distance parcourue, revenu transport estimé, événements en temps réel.</p>
+          <img src="{{ url_for('static', filename='img/shot-flotte.png') }}" alt="Suivi de flotte Khotwa" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top:26px; font-size:.85rem; color:var(--muted-2)">
+      Ceci est un aperçu de l'interface réelle. Pour une démonstration complète et personnalisée,
+      <a href="/contact?service=ecole" style="color:var(--accent); font-weight:600">demandez un accès</a>.
+    </p>
+  </div>
+</section>
+
+{% endblock %}
